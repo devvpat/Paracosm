@@ -11,6 +11,7 @@ namespace ACoolTeam
 
         // stuff we probably need (rename)
         private bool _isMovementPressed;
+        private bool _isActionPressed;
         private bool _isGrounded;
         private bool _isJumping;
 
@@ -19,6 +20,7 @@ namespace ACoolTeam
         #region Properties
         public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
         public bool IsMovementPressed { get { return _isMovementPressed; } }
+        public bool IsActionPressed { get { return _isActionPressed; } }
         public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
         public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
 

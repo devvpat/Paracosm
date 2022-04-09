@@ -16,7 +16,7 @@ namespace ACoolTeam
 
         public override void UpdateState()
         {
-
+            CheckSwitchStates();
         }
 
         public override void ExitState()
