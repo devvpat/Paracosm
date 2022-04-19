@@ -1,3 +1,4 @@
+using UnityEngine;
 
 namespace ACoolTeam
 {
@@ -11,7 +12,7 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-
+            Debug.Log("Entered Jump State");
         }
 
         public override void UpdateState()

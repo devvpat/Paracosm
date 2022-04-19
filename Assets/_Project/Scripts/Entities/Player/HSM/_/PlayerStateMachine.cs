@@ -15,10 +15,13 @@ namespace ACoolTeam
         private PlayerInput _playerInput;
 
         // player components
-        [SerializeField]
-        private Rigidbody2D _playerRigidBody;
-        [SerializeField]
-        private SpriteRenderer _playerSpriteRenderer;
+        [SerializeField] private Rigidbody2D _playerRigidBody;
+        [SerializeField] private SpriteRenderer _playerSpriteRenderer;
+        [SerializeField] private Animator _playerAnimator;
+
+        // player animation
+        [SerializeField] private AnimationClip _playerWalkAnim;
+        [SerializeField] private AnimationClip _playerIdleAnim;
 
         // state params
         private bool _isMovementPressed;
@@ -40,11 +43,14 @@ namespace ACoolTeam
         public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
         public Rigidbody2D PlayerRigidBody { get { return _playerRigidBody; } }
         public SpriteRenderer PlayerSpriteRenderer { get { return _playerSpriteRenderer; } }
+        public Animator PlayerAnimator { get { return _playerAnimator; } }
         public bool IsMovementPressed { get { return _isMovementPressed; } }
         public bool IsActionPressed { get { return _isActionPressed; } }
         public bool IsJumpPressed { get { return _isJumpPressed; } }
         public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
         public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
+        public AnimationClip PlayerIdleAnim { get { return _playerIdleAnim; } }
+        public AnimationClip PlayerWalkAnim { get { return _playerWalkAnim; } }
 
         #endregion
 

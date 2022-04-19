@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace ACoolTeam
 {
     public class PlayerIdleState : PlayerBaseState
@@ -7,7 +9,8 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-
+            Debug.Log("Entered Idle State");
+            AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerIdleAnim);
         }
 
         public override void UpdateState()

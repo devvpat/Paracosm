@@ -1,4 +1,6 @@
 
+using UnityEngine;
+
 namespace ACoolTeam
 {
     public class PlayerMoveState : PlayerBaseState
@@ -7,7 +9,8 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-
+            Debug.Log("Entered Move State");
+            AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerWalkAnim);
         }
 
         public override void UpdateState()
