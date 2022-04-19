@@ -19,7 +19,7 @@ namespace ACoolTeam
 		[SerializeField]
 		private float LowerLimit;
 
-		//Public so if we need to change this somewhere we can do so easily
+		//public so if we need to change this somewhere we can do so easily
 		public bool FollowPlayer;
 
 		void Start()
