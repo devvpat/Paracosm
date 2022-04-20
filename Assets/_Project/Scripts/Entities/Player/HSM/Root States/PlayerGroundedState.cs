@@ -27,12 +27,17 @@ namespace ACoolTeam
 
         public override void CheckSwitchStates()
         {
-            
+            if (Ctx.IsJumpPressed)
+                SwitchState(Factory.Jump());
+
         }
 
         public override void InitializeSubState()
         {
-            
+            if (!Ctx.IsMovementPressed)
+                SetSubState(Factory.Idle());
+            else
+                SetSubState(Factory.Move());
         }
     }
 }

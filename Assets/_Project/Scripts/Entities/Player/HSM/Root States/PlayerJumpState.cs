@@ -32,7 +32,10 @@ namespace ACoolTeam
 
         public override void InitializeSubState()
         {
-
+            if (!Ctx.IsMovementPressed)
+                SetSubState(Factory.Idle());
+            else
+                SetSubState(Factory.Move());
         }
     }
 }
