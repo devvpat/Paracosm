@@ -307,6 +307,7 @@ MonoBehaviour:
   _playerAnimator: {fileID: 2043915978}
   _playerWalkAnim: {fileID: 7400000, guid: 1429ecbfc3ac53643a2b5e6ff11e34e5, type: 2}
   _playerIdleAnim: {fileID: 7400000, guid: 56c5dbab85e227145a3c2ac492cf2826, type: 2}
+  _jumpVelocity: 15
   _speed: 3
 --- !u!114 &286164616
 MonoBehaviour:
@@ -886,11 +887,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!4 &1542555481
 Transform:
@@ -900,7 +901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542555479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 286164614}

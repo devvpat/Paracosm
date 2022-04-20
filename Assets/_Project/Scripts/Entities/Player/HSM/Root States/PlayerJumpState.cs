@@ -14,8 +14,8 @@ namespace ACoolTeam
         {
             Debug.Log("Entered Jump State");
             Ctx.IsJumping = true;
-            float jumpVelocity = 15;
-            Ctx.PlayerRigidBody.velocity = Vector2.up * jumpVelocity;
+            Ctx.IsGrounded = false;
+            Ctx.PlayerRigidBody.velocity = Vector2.up * Ctx.JumpVelocity;
         }
 
         public override void UpdateState()
@@ -28,11 +28,12 @@ namespace ACoolTeam
         public override void ExitState()
         {
             Ctx.IsJumping = false;
+            Ctx.IsGrounded = true;
         }
 
         public override void CheckSwitchStates()
         {
-            if (Ctx.PlayerRigidBody.velocity.sqrMagnitude == 0)
+            if (Ctx.PlayerRigidBody.velocity.y >= Mathf.Min(0.1f, -0.1f) && Ctx.PlayerRigidBody.velocity.y <= Mathf.Max(0.1f, -0.1f))
                 SwitchState(Factory.Grounded());
         }
 

@@ -13,6 +13,7 @@ namespace ACoolTeam
         public override void EnterState()
         {
             Debug.Log("Entered Grounded State");
+            Ctx.IsGrounded = true;
         }
 
         public override void UpdateState()
@@ -27,7 +28,7 @@ namespace ACoolTeam
 
         public override void CheckSwitchStates()
         {
-            if (!Ctx.IsJumping && Ctx.IsJumpPressed)
+            if (Ctx.IsGrounded && !Ctx.IsJumping && Ctx.IsJumpPressed)
                 SwitchState(Factory.Jump());
 
         }
