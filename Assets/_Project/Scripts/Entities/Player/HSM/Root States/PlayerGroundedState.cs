@@ -27,7 +27,7 @@ namespace ACoolTeam
 
         public override void CheckSwitchStates()
         {
-            if (Ctx.IsJumpPressed)
+            if (!Ctx.IsJumping && Ctx.IsJumpPressed)
                 SwitchState(Factory.Jump());
 
         }
