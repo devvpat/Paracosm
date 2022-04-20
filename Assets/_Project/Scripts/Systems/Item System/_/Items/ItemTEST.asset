@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ItemTEST
   m_EditorClassIdentifier: 
   Id: 0
-  Name: 
+  Name: TEST
   ItemPrefab: {fileID: 0}
   DeployPrefab: {fileID: 0}
   UiDisplay: {fileID: 0}
