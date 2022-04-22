@@ -1,0 +1,14 @@
+SoundManager is a singleton
+
+Instructions for playing sound:
+1. attack "SM_PlaySound" to a gameobject
+2. configure clip settings - clip file, volume, and soundtype (background music or sound effect)
+3. congigure bgm settings (leave at default values if it is a sound effect) - fade out old sound and fade in new sound, and the duration of the fades
+4. configure call settings - choose whether to call on a trigger enter, collision enter or none
+5. if NOT called on either trigger/collision, get the "SM_PlaySound" component and call the "public void PlayClip(SoundType soundType)" method - get the soundtype from the public SoundType enum: SoundType.SFX or SoundType.BGM
+
+Other information
+1. if you want to just modify the volume of a sound source (background music or sound effect), call the "public IEnumerator FadeAudio(AudioSource audSrc, float targetVol, float duration)" method from SoundManager - you can get the AudioSource by calling SoundManager's Get_BGMSource() or Get_SFXSource() method
+
+
+ask me any other questions if you have them
