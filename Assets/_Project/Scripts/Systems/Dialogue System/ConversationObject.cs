@@ -16,7 +16,5 @@ namespace ACoolTeam
         public string Lines;
         public string CharName;
         public Sprite DisplayPic;
-
-
     }
 }

@@ -35,6 +35,10 @@ namespace ACoolTeam
             else if (Instance != this) Destroy(this);
         }
 
+        public void StartConversation(ConversationObject currentConversation)
+        { 
+
+        }
 
     }
 }
