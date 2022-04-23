@@ -9,4 +9,14 @@ namespace ACoolTeam
     {
         public ConversationEntryObject[] ConversationLines;
     }
+
+    [System.Serializable]
+    public class ConversationEntryObject
+    {
+        public string Lines;
+        public string CharName;
+        public Sprite DisplayPic;
+
+
+    }
 }
