@@ -13,7 +13,7 @@ namespace ACoolTeam
         public static ConversationManager Instance { get; private set; }
 
         [SerializeField] private TextMeshProUGUI _dialogueText;
-        [SerializeField] private GameObject _displayPic;
+        [SerializeField] private Image _displayPic;
         [SerializeField] private Image _dialogueBox;
         [SerializeField] private ConversationEntryObject _currentLine;
         [SerializeField] private GameObject _dialogueDisplay;
@@ -31,6 +31,8 @@ namespace ACoolTeam
             }
             else if (Instance != this) Destroy(this);
 
+            _dialogueDisplay.SetActive(false);
+
             _playerInput = new PlayerInput();
 
             _playerInput.Player.Enter.started += NextEntry;
@@ -38,7 +40,7 @@ namespace ACoolTeam
 
         private void NextEntry(InputAction.CallbackContext context)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void OnEnable()
@@ -52,8 +54,8 @@ namespace ACoolTeam
         }
 
         public void StartConversation(ConversationObject currentConversation)
-        { 
-
+        {
+            _isTalking = true;
         }
 
         public void ToggleUI()
