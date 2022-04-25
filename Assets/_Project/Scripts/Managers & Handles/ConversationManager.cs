@@ -18,6 +18,7 @@ namespace ACoolTeam
         [SerializeField] private Image _dialogueBox;
         //[SerializeField] private ConversationEntryObject _currentLine;
         [SerializeField] private GameObject _dialogueDisplay;
+        [SerializeField] private AudioClip _textSound;
 
         private bool _isTalking = false;
         private PlayerInput _playerInput;
@@ -88,6 +89,7 @@ namespace ACoolTeam
 
         private IEnumerator WaitForPlayerCo()
         {
+            SoundManager.Instance.PlaySFX(_textSound, 0.2f);
             yield return new WaitForSeconds(0.5f);
             while (!_enterPressed)
             {
