@@ -22,6 +22,9 @@ namespace ACoolTeam
         [SerializeField]
         private ConversationEntryObject _currentLine;
 
+        [SerializeField]
+        private GameObject _dialogueDisplay;
+
         private bool _isTalking = false;
 
 
@@ -40,5 +43,9 @@ namespace ACoolTeam
 
         }
 
+        public void ToggleUI()
+        {
+            _dialogueDisplay.SetActive(!(_dialogueDisplay.activeSelf));
+        }
     }
 }
