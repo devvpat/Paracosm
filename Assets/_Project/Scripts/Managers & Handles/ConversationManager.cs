@@ -13,13 +13,15 @@ namespace ACoolTeam
         public static ConversationManager Instance { get; private set; }
 
         [SerializeField] private TextMeshProUGUI _dialogueText;
+        [SerializeField] private TextMeshProUGUI _characterName;
         [SerializeField] private Image _displayPic;
         [SerializeField] private Image _dialogueBox;
-        [SerializeField] private ConversationEntryObject _currentLine;
+        //[SerializeField] private ConversationEntryObject _currentLine;
         [SerializeField] private GameObject _dialogueDisplay;
 
         private bool _isTalking = false;
         private PlayerInput _playerInput;
+        private bool _enterPressed;
 
 
         private void Awake()
@@ -36,11 +38,12 @@ namespace ACoolTeam
             _playerInput = new PlayerInput();
 
             _playerInput.Player.Enter.started += NextEntry;
+            _playerInput.Player.Enter.canceled += NextEntry;
         }
 
         private void NextEntry(InputAction.CallbackContext context)
         {
-            
+            _enterPressed = context.ReadValue<float>() > 0;
         }
 
         private void OnEnable()
@@ -55,12 +58,51 @@ namespace ACoolTeam
 
         public void StartConversation(ConversationObject currentConversation)
         {
-            _isTalking = true;
+            if (!_isTalking)
+            {
+                _isTalking = true;
+                _dialogueDisplay.SetActive(true);
+
+                StartCoroutine(ConversationCo(currentConversation));
+            }
         }
 
-        public void ToggleUI()
+        private IEnumerator ConversationCo(ConversationObject currentConversation)
         {
-            _dialogueDisplay.SetActive(!(_dialogueDisplay.activeSelf));
+            foreach (ConversationEntryObject entry in currentConversation.ConversationLines)
+            {
+                PopulateCurrentEntry(entry);
+                yield return WaitForPlayerCo();
+            }
+
+            _dialogueDisplay.SetActive(false);
+            _isTalking = false;
+        }
+
+        private void PopulateCurrentEntry(ConversationEntryObject entry)
+        {
+            _displayPic.sprite = entry.DisplayPic;
+            _characterName.text = entry.CharName;
+            StartCoroutine(ScrollText(entry.Lines));
+        }
+
+        private IEnumerator WaitForPlayerCo()
+        {
+            yield return new WaitForSeconds(0.5f);
+            while (!_enterPressed)
+            {
+                yield return null;
+            }
+        }
+
+        private IEnumerator ScrollText(string text)
+        {
+            _dialogueText.text = String.Empty;
+            foreach (char chr in text)
+            {
+                _dialogueText.text += chr;
+                yield return new WaitForSeconds(0.05f);
+            }
         }
     }
 }
