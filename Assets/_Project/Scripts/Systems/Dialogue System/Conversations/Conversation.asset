@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Conversation
   m_EditorClassIdentifier: 
   ConversationLines:
-  - Lines: first text
+  - Lines: The quick brown jumped over the lazy fox...
     CharName: Justin
     DisplayPic: {fileID: -5178490069587347311, guid: 2257ec568ad436246a31348c1a3feca1, type: 3}
-  - Lines: second text
+  - Lines: patjpi tsjpies gsepjish pshjiseph ijshjps fheosiu
     CharName: John
     DisplayPic: {fileID: 8065611683492194609, guid: 1ad25be5298346343b2d17841c950d9f, type: 3}
-  - Lines: third text
+  - Lines: FAJKWLPHIAGW AHPIGW
     CharName: JJ
     DisplayPic: {fileID: 1125956352097747138, guid: 2257ec568ad436246a31348c1a3feca1, type: 3}

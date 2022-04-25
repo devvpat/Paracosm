@@ -16,7 +16,6 @@ namespace ACoolTeam
         [SerializeField] private TextMeshProUGUI _characterName;
         [SerializeField] private Image _displayPic;
         [SerializeField] private Image _dialogueBox;
-        //[SerializeField] private ConversationEntryObject _currentLine;
         [SerializeField] private GameObject _dialogueDisplay;
         [SerializeField] private AudioClip _textSound;
 
@@ -103,7 +102,7 @@ namespace ACoolTeam
             foreach (char chr in text)
             {
                 _dialogueText.text += chr;
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.025f);
             }
         }
     }
