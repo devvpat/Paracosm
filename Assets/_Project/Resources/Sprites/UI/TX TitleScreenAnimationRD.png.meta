@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -496,6 +497,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TX TitleScreenAnimationRD_1: -8468256833529145649
+      TX TitleScreenAnimationRD_11: -7339240688204221713
+      TX TitleScreenAnimationRD_3: -3063488959271588195
+      TX TitleScreenAnimationRD_2: -7307837249342483225
+      TX TitleScreenAnimationRD_15: 1125956352097747138
+      TX TitleScreenAnimationRD_14: -1380711636334129293
+      TX TitleScreenAnimationRD_13: -2217305665161234941
+      TX TitleScreenAnimationRD_8: -8505355944103224404
+      TX TitleScreenAnimationRD_7: -7162810324436755524
+      TX TitleScreenAnimationRD_12: 6373211391108154619
+      TX TitleScreenAnimationRD_0: 8613681641017101002
+      TX TitleScreenAnimationRD_4: -4598214238929424124
+      TX TitleScreenAnimationRD_6: 1870854751855433670
+      TX TitleScreenAnimationRD_5: -5178490069587347311
+      TX TitleScreenAnimationRD_10: 5180220372265095537
+      TX TitleScreenAnimationRD_9: 7972160693775906918
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
