@@ -1,0 +1,46 @@
+********
+
+IMPORTANT: I have already set up the lighting, so all you need to do is add light objects to the scene.
+To add light objects: Create -> Lights -> 2D -> Choose a type (description of types below)
+
+IMPORTANT 2: When creating a new scene, do STEP 6, then add a GLOBAL LIGHT to see everything again like normal.
+When ready to light, turn off global light (if you made and have the default one on) and add 2D light (see types of light section)
+
+********
+
+1. Add Universal RP from asset manager
+2. Create -> Rendering -> Universal RP -> Pipeline Asset
+3. Project Settings -> Graphics -> Set Scriptable Render Pipeline Settings to above
+4. Create -> Rendering -> Universal RP -> 2D Renderer
+5. Pipeline Asset -> General -> Renderer List -> Set default to 2D renderer
+6. Edit -> Renderer Pipeline -> Universal RP -> 2D Renderer -> Upgrade Scene to 2D Renderer
+
+---- NOW EVERYTHING SHOULD BE BLACK/UNLIT AND HAVE SPRITE-LIT-DEFAULT MATERIAL ----
+
+7. Create Lights -> 2D -> Choose a type (list of types below)
+8. Configure 2D light to target all layers appropriately
+9. Configure 2D light to have settings you want (color, intensity, etc.)
+
+---- LIST OF 2D LIGHT TYPES ----
+
+Create -> Lights -> 2D -> Point Light (shines light in area)
+*Modify inner/outer angle of point light to make spotlight
+
+Create -> Lights -> 2D -> Global Light (shines light on everything)
+
+Create -> Lights -> 2D -> Sprite Lightn (makes a sprite a light source sort of, hard to explain)
+
+Create -> Lights -> 2D -> Freeform Light (make a light with a custom shape)
+
+Create -> Lights -> 2D -> Parametric Light (make light shape with X amount of corners)
+
+---- OTHER GOOD INFO ----
+
+To toggle normal maps:
+1. Go to the Sprite -> Sprite Editor -> Secondary Textures -> Plus Sign -> Add "_NormalMap" for name -> Set Normal Map texture
+2. Make sure Normal Map texture is set to Normal Map type
+3. Click lights (best to exclude global light) -> Check use normal map
+
+Shadows (though a bit strange imo)
+1. Go to gameobject -> add "Shadow Caster 2D (Experimental)" script
+2. Go to light -> play with shadow intensity setting
