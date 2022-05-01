@@ -7,10 +7,7 @@ namespace ACoolTeam
     {
         private void Awake()
         {
-            if (CoolDown == 0)
-            {
-                CoolDown = 0.6f;
-            }
+
         }
     }
 }

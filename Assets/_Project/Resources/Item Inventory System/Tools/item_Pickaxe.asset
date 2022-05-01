@@ -10,15 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd9ffb319609f8c4d818523e7025c3fa, type: 3}
-  m_Name: ItemTEST
+  m_Name: item_Pickaxe
   m_EditorClassIdentifier: 
   Id: 0
-  Name: TEST
-  ItemPrefab: {fileID: 0}
-  DeployPrefab: {fileID: 0}
+  Name: Sword
   UiDisplay: {fileID: 0}
   ItemType: 0
-  ToolType: 0
-  AttackDamage: 0
-  HitValue: 0
-  CoolDown: 0.6
