@@ -10,78 +10,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b80d8b97ce51f34fa27cf6b34554ce5, type: 3}
-  m_Name: PlayerInventory
+  m_Name: ChestInventory
   m_EditorClassIdentifier: 
   StackSize: 99
   Container:
     Slots:
-    - ID: -1
+    - ID: 0
       Name: 
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
-        ItemPrefab: {fileID: 0}
-        DeployPrefab: {fileID: 0}
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
-        ToolType: 0
-        AttackDamage: 0
-        HitValue: 0
-        CoolDown: 0
-    - ID: -1
+    - ID: 0
       Name: 
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
-        ItemPrefab: {fileID: 0}
-        DeployPrefab: {fileID: 0}
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
-        ToolType: 0
-        AttackDamage: 0
-        HitValue: 0
-        CoolDown: 0
-    - ID: -1
+    - ID: 0
       Name: 
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
-        ItemPrefab: {fileID: 0}
-        DeployPrefab: {fileID: 0}
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
-        ToolType: 0
-        AttackDamage: 0
-        HitValue: 0
-        CoolDown: 0
-    - ID: -1
+    - ID: 0
       Name: 
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
-        ItemPrefab: {fileID: 0}
-        DeployPrefab: {fileID: 0}
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
-        ToolType: 0
-        AttackDamage: 0
-        HitValue: 0
-        CoolDown: 0
-    - ID: -1
+    - ID: 0
       Name: 
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
-        ItemPrefab: {fileID: 0}
-        DeployPrefab: {fileID: 0}
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
-        ToolType: 0
-        AttackDamage: 0
-        HitValue: 0
-        CoolDown: 0

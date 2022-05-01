@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30abf77fa2757b54cab02c0ceda93373, type: 3}
-  m_Name: ItemDataBase
+  m_Script: {fileID: 11500000, guid: fd9ffb319609f8c4d818523e7025c3fa, type: 3}
+  m_Name: item_Sword
   m_EditorClassIdentifier: 
-  Items:
-  - {fileID: 11400000, guid: f4259f775bf5dab48b0f80a338d5081b, type: 2}
+  Id: 1
+  Name: Pickaxe
+  UiDisplay: {fileID: -8946098821305995989, guid: 03874d5d5e106014997065ecee22fc24, type: 3}
+  ItemType: 2
