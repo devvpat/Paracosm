@@ -1791,6 +1791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 11400000, guid: aa50fb97ed301924d9e7bbcff6333613, type: 2}
+  _chestInventory: {fileID: 11400000, guid: fa6a807504abcee4a81e7e06db175301, type: 2}
 --- !u!1 &572164097
 GameObject:
   m_ObjectHideFlags: 0
@@ -4459,6 +4460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264e8c5755c1f2c4ba585179b345e139, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemDatabase: {fileID: 0}
 --- !u!61 &1331427961
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -12,6 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b80d8b97ce51f34fa27cf6b34554ce5, type: 3}
   m_Name: ChestInventory
   m_EditorClassIdentifier: 
-  StackSize: 0
+  StackSize: 99
   Container:
-    Slots: []
+    Slots:
+    - ID: 0
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: 0
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: 0
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: 0
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: 0
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
