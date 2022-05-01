@@ -21,7 +21,6 @@ namespace ACoolTeam
         public override void UpdateState()
         {
 
-            HandleGravity();
             CheckSwitchStates();
         }
 
@@ -43,11 +42,6 @@ namespace ACoolTeam
                 SetSubState(Factory.Idle());
             else
                 SetSubState(Factory.Move());
-        }
-
-        private void HandleGravity()
-        {
-            //Ctx.PlayerPosition += new Vector2(Ctx.PlayerPosition.x, Ctx.PlayerPosition.y - Ctx.Gravity);
         }
     }
 }

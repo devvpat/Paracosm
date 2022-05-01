@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace ACoolTeam
 {
-    public class PlayerGroundedState : PlayerBaseState
+    public class PlayerCrawlState : PlayerBaseState
     {
-        public PlayerGroundedState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
+        public PlayerCrawlState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
         {
             IsRootState = true;
             InitializeSubState();
@@ -12,8 +12,9 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-            Debug.Log("Entered Grounded State");
+            Debug.Log("Entered Crawl State");
             Ctx.IsGrounded = true;
+            Ctx.PlayerSpeed = Ctx.BaseSpeed * Ctx.CrawSpeedMultipler;
         }
 
         public override void UpdateState()
@@ -23,16 +24,13 @@ namespace ACoolTeam
 
         public override void ExitState()
         {
-            
+            Ctx.PlayerSpeed = Ctx.BaseSpeed;
         }
 
         public override void CheckSwitchStates()
         {
-            if (Ctx.IsGrounded && !Ctx.IsJumping && Ctx.IsJumpPressed)
-                SwitchState(Factory.Jump());
-            else if(Ctx.IsCrawling)
-                SwitchState(Factory.Crawling());
-
+            if (!Ctx.IsCrawling)
+                SwitchState(Factory.Grounded());
         }
 
         public override void InitializeSubState()

@@ -30,10 +30,18 @@ namespace ACoolTeam
         // jump vars
         private bool _isJumpPressed = false;
         private bool _isJumping;
-        [SerializeField] private float _jumpVelocity;
+        [SerializeField] 
+        private float _jumpVelocity;
+
+        // crawl vars
+        private bool _isCrawling = false;
+        [SerializeField]
+        private float _crawlSpeedMultipler;
 
         // player params
-        [SerializeField] private float _speed;
+        [SerializeField] 
+        private float _speed;
+        private float _baseSpeed;
 
         // vecs
         private Vector2 _currentMovementInput;
@@ -52,7 +60,11 @@ namespace ACoolTeam
         public bool IsJumpPressed { get { return _isJumpPressed; } }
         public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
         public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
+        public bool IsCrawling { get { return _isCrawling; } }
         public float JumpVelocity { get { return _jumpVelocity; } set { _jumpVelocity = value; } }
+        public float PlayerSpeed { get { return _speed; } set { _speed = value; } }
+        public float BaseSpeed { get { return _baseSpeed; } }
+        public float CrawSpeedMultipler { get { return _crawlSpeedMultipler; } }
         public Vector2 CurrentMovement { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
 
         #endregion
@@ -63,6 +75,7 @@ namespace ACoolTeam
             // inits
             _states = new PlayerStateFactory(this);
             _playerInput = new PlayerInput();
+            _baseSpeed = _speed;
 
             // always start player in the grounded state
             _currentState = _states.Grounded();
@@ -74,7 +87,7 @@ namespace ACoolTeam
             _playerInput.Player.Move.canceled += OnMoveInput;
             _playerInput.Player.Jump.started += OnJumpInput;
             _playerInput.Player.Jump.canceled += OnJumpInput;
-
+            _playerInput.Player.Crawl.started += OnCrawlInput;
         }
 
         private void OnEnable()
@@ -110,6 +123,11 @@ namespace ACoolTeam
         private void OnJumpInput(InputAction.CallbackContext context)
         {
             _isJumpPressed = context.ReadValue<float>() > 0;
+        }
+
+        private void OnCrawlInput(InputAction.CallbackContext context)
+        {
+            _isCrawling = !_isCrawling;
         }
 
         #endregion
