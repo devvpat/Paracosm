@@ -8,10 +8,13 @@ namespace ACoolTeam
 {
     public class DisplaySlot : MonoBehaviour, IPointerClickHandler
     {
+        public delegate void SlotClickAction();
+        public static event SlotClickAction OnSlotClick;
+
         [SerializeField]
         private InventoryObject _playerInventory;
-        [SerializeField]
-        private UnityEvent _onSlotClick;
+        //[SerializeField]
+        //private UnityEvent _onSlotClick;
         public InventorySlot Slot;
 
         [HideInInspector]
@@ -52,7 +55,7 @@ namespace ACoolTeam
         {
             InventorySlot[] inventory = _playerInventory.Container.Slots;
             InventorySlot mouseSlot = MouseSlotHandle.MouseSlot;
-
+            Debug.Log(CanClick);
             if (CanClick)
             {
                 if (eventData.button == PointerEventData.InputButton.Left)
@@ -140,8 +143,7 @@ namespace ACoolTeam
                     }
                 }
             }
-            //DisplayHand.RefreshHandSprite(_playerInventory);
-            _onSlotClick?.Invoke();
+            OnSlotClick?.Invoke();
         }
     }
 }

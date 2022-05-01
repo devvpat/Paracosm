@@ -35,7 +35,7 @@ namespace ACoolTeam
 
         public Item(ItemObject item)
         {
-            Name = item.name;
+            Name = item.Name;
             Id = item.Id;
             UiDisplay = item.UiDisplay;
             ItemType = item.ItemType;

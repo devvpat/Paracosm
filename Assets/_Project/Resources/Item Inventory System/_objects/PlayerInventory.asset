@@ -15,22 +15,22 @@ MonoBehaviour:
   StackSize: 99
   Container:
     Slots:
-    - ID: -1
-      Name: 
-      CurrentStack: 0
+    - ID: 0
+      Name: Sword
+      CurrentStack: 1
       SlotItem:
-        Name: 
-        Id: -1
-        UiDisplay: {fileID: 0}
-        ItemType: 0
-    - ID: -1
-      Name: 
-      CurrentStack: 0
+        Name: Sword
+        Id: 0
+        UiDisplay: {fileID: -2550652238514681116, guid: 03874d5d5e106014997065ecee22fc24, type: 3}
+        ItemType: 2
+    - ID: 1
+      Name: Pickaxe
+      CurrentStack: 1
       SlotItem:
-        Name: 
-        Id: -1
-        UiDisplay: {fileID: 0}
-        ItemType: 0
+        Name: Pickaxe
+        Id: 1
+        UiDisplay: {fileID: -8946098821305995989, guid: 03874d5d5e106014997065ecee22fc24, type: 3}
+        ItemType: 2
     - ID: -1
       Name: 
       CurrentStack: 0

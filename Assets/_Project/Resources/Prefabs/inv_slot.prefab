@@ -161,7 +161,7 @@ RectTransform:
   m_GameObject: {fileID: 4425283925993044290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 4425283926661007051}
   m_RootOrder: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 4425283926661007046}
   - component: {fileID: 4425283926661007045}
   - component: {fileID: 4425283926661007044}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: inv_slot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4e5012bc7e66b4797b60dc07cf2f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerInventory: {fileID: 0}
+  _playerInventory: {fileID: 11400000, guid: aa50fb97ed301924d9e7bbcff6333613, type: 2}
   _onSlotClick:
     m_PersistentCalls:
       m_Calls: []
@@ -355,13 +355,7 @@ MonoBehaviour:
     SlotItem:
       Name: 
       Id: -1
-      ItemPrefab: {fileID: 0}
-      DeployPrefab: {fileID: 0}
       UiDisplay: {fileID: 0}
       ItemType: 0
-      ToolType: 0
-      AttackDamage: 0
-      HitValue: 0
-      CoolDown: 0
   Index: 0
   CanClick: 0
