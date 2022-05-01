@@ -13,17 +13,12 @@ namespace ACoolTeam
 
         [SerializeField]
         private InventoryObject _playerInventory;
-        //[SerializeField]
-        //private UnityEvent _onSlotClick;
         public InventorySlot Slot;
 
-        [HideInInspector]
-        public int Index;
-        [HideInInspector]
-        public bool CanClick;
+        [HideInInspector] public int Index;
 
-        private TextMeshProUGUI _itemAmountText;
         private Image _itemImage;
+        private TextMeshProUGUI _itemAmountText;
 
         private void Awake()
         {
@@ -55,90 +50,87 @@ namespace ACoolTeam
         {
             InventorySlot[] inventory = _playerInventory.Container.Slots;
             InventorySlot mouseSlot = MouseSlotHandle.MouseSlot;
-            Debug.Log(CanClick);
-            if (CanClick)
+
+            if (eventData.button == PointerEventData.InputButton.Left)
             {
-                if (eventData.button == PointerEventData.InputButton.Left)
+                if (mouseSlot.HasItem())
                 {
-                    if (mouseSlot.HasItem())
+                    if (inventory[Index].HasItem())
                     {
-                        if (inventory[Index].HasItem())
+                        if (inventory[Index].ID == mouseSlot.ID)
                         {
-                            if (inventory[Index].ID == mouseSlot.ID)
-                            {
-                                inventory[Index].OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, inventory[Index].CurrentStack + mouseSlot.CurrentStack);
-                                MouseSlotHandle.MouseSlot = new InventorySlot();
-                            }
-                            else
-                            {
-                                _playerInventory.SwapSlots(MouseSlotHandle.MouseSlot, inventory[Index]);
-                            }
+                            inventory[Index].OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, inventory[Index].CurrentStack + mouseSlot.CurrentStack);
+                            MouseSlotHandle.MouseSlot = new InventorySlot();
                         }
                         else
                         {
-                            inventory[Index] = mouseSlot;
-                            MouseSlotHandle.MouseSlot = new InventorySlot();
+                            _playerInventory.SwapSlots(MouseSlotHandle.MouseSlot, inventory[Index]);
                         }
                     }
                     else
                     {
-                        if (inventory[Index].HasItem())
-                        {
-                            MouseSlotHandle.MouseSlot = inventory[Index];
-                            inventory[Index] = new InventorySlot();
-                        }
+                        inventory[Index] = mouseSlot;
+                        MouseSlotHandle.MouseSlot = new InventorySlot();
                     }
                 }
-                else if (eventData.button == PointerEventData.InputButton.Right)
+                else
                 {
-                    if (mouseSlot.HasItem())
+                    if (inventory[Index].HasItem())
                     {
-                        if (inventory[Index].HasItem())
-                        {
-                            if (inventory[Index].ID == mouseSlot.ID)
-                            {
-                                inventory[Index].OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, inventory[Index].CurrentStack + 1);
-                                MouseSlotHandle.MouseSlot.OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, mouseSlot.CurrentStack - 1);
-                            }
-                            else
-                            {
-                                _playerInventory.SwapSlots(MouseSlotHandle.MouseSlot, inventory[Index]);
-                            }
-                        }
-                        else
+                        MouseSlotHandle.MouseSlot = inventory[Index];
+                        inventory[Index] = new InventorySlot();
+                    }
+                }
+            }
+            else if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                if (mouseSlot.HasItem())
+                {
+                    if (inventory[Index].HasItem())
+                    {
+                        if (inventory[Index].ID == mouseSlot.ID)
                         {
                             inventory[Index].OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, inventory[Index].CurrentStack + 1);
                             MouseSlotHandle.MouseSlot.OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, mouseSlot.CurrentStack - 1);
                         }
+                        else
+                        {
+                            _playerInventory.SwapSlots(MouseSlotHandle.MouseSlot, inventory[Index]);
+                        }
                     }
                     else
                     {
-                        if (inventory[Index].HasItem())
+                        inventory[Index].OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, inventory[Index].CurrentStack + 1);
+                        MouseSlotHandle.MouseSlot.OverrideSlot(mouseSlot.ID, mouseSlot.SlotItem, mouseSlot.CurrentStack - 1);
+                    }
+                }
+                else
+                {
+                    if (inventory[Index].HasItem())
+                    {
+                        if (inventory[Index].CurrentStack > 1)
                         {
-                            if (inventory[Index].CurrentStack > 1)
+                            if (inventory[Index].CurrentStack % 2 == 0)
                             {
-                                if (inventory[Index].CurrentStack % 2 == 0)
-                                {
-                                    MouseSlotHandle.MouseSlot = inventory[Index];
-                                    MouseSlotHandle.MouseSlot.OverrideSlot(inventory[Index].ID, inventory[Index].SlotItem, inventory[Index].CurrentStack / 2);
+                                MouseSlotHandle.MouseSlot = inventory[Index];
+                                MouseSlotHandle.MouseSlot.OverrideSlot(inventory[Index].ID, inventory[Index].SlotItem, inventory[Index].CurrentStack / 2);
 
-                                    inventory[Index] = new InventorySlot();
-                                    inventory[Index].OverrideSlot(MouseSlotHandle.MouseSlot.ID, MouseSlotHandle.MouseSlot.SlotItem, MouseSlotHandle.MouseSlot.CurrentStack);
-                                }
-                                else
-                                {
-                                    MouseSlotHandle.MouseSlot = inventory[Index];
-                                    MouseSlotHandle.MouseSlot.OverrideSlot(inventory[Index].ID, inventory[Index].SlotItem, ((inventory[Index].CurrentStack % 2) + ((inventory[Index].CurrentStack - 1) / 2)));
-
-                                    inventory[Index] = new InventorySlot();
-                                    inventory[Index].OverrideSlot(MouseSlotHandle.MouseSlot.ID, MouseSlotHandle.MouseSlot.SlotItem, MouseSlotHandle.MouseSlot.CurrentStack - 1);
-                                }
+                                inventory[Index] = new InventorySlot();
+                                inventory[Index].OverrideSlot(MouseSlotHandle.MouseSlot.ID, MouseSlotHandle.MouseSlot.SlotItem, MouseSlotHandle.MouseSlot.CurrentStack);
                             }
                             else
                             {
                                 MouseSlotHandle.MouseSlot = inventory[Index];
+                                MouseSlotHandle.MouseSlot.OverrideSlot(inventory[Index].ID, inventory[Index].SlotItem, ((inventory[Index].CurrentStack % 2) + ((inventory[Index].CurrentStack - 1) / 2)));
+
                                 inventory[Index] = new InventorySlot();
+                                inventory[Index].OverrideSlot(MouseSlotHandle.MouseSlot.ID, MouseSlotHandle.MouseSlot.SlotItem, MouseSlotHandle.MouseSlot.CurrentStack - 1);
                             }
+                        }
+                        else
+                        {
+                            MouseSlotHandle.MouseSlot = inventory[Index];
+                            inventory[Index] = new InventorySlot();
                         }
                     }
                 }

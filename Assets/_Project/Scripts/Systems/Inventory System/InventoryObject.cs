@@ -61,7 +61,7 @@ namespace ACoolTeam
     [System.Serializable]
     public class Inventory
     {
-        public InventorySlot[] Slots = new InventorySlot[10];
+        public InventorySlot[] Slots;
     }
 
     [System.Serializable]

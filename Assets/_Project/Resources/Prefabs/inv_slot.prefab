@@ -345,9 +345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerInventory: {fileID: 11400000, guid: aa50fb97ed301924d9e7bbcff6333613, type: 2}
-  _onSlotClick:
-    m_PersistentCalls:
-      m_Calls: []
   Slot:
     ID: -1
     Name: 
