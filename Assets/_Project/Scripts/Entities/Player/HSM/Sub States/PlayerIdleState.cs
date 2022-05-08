@@ -10,7 +10,8 @@ namespace ACoolTeam
         public override void EnterState()
         {
             Debug.Log("Entered Idle State");
-            AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerIdleAnim);
+
+            AnimHandle();
         }
 
         public override void UpdateState()
@@ -32,6 +33,14 @@ namespace ACoolTeam
         public override void InitializeSubState()
         {
 
+        }
+
+        private void AnimHandle()
+        {
+            if(!Ctx.IsCrawling)
+                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerIdleAnim);
+            else
+                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerCrawlIdleAnim);
         }
     }
 }

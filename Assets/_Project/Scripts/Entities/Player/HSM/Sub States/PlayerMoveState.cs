@@ -10,7 +10,7 @@ namespace ACoolTeam
         public override void EnterState()
         {
             Debug.Log("Entered Move State");
-            AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerWalkAnim);
+            AnimHandle();
         }
 
         public override void UpdateState()
@@ -32,6 +32,14 @@ namespace ACoolTeam
         public override void InitializeSubState()
         {
 
+        }
+
+        private void AnimHandle()
+        {
+            if (!Ctx.IsCrawling)
+                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerWalkAnim);
+            else
+                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerCrawlMoveAnim);
         }
     }
 }
