@@ -1651,7 +1651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408082237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.23, y: -4.93, z: -10}
+  m_LocalPosition: {x: 30.18, y: -4.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 153826311}
@@ -2131,7 +2131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.23, y: -4.93, z: -10}
+  m_LocalPosition: {x: 30.18, y: -4.77, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 630792083}
@@ -3235,7 +3235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802658029}
   m_Layer: 0
-  m_Name: What are these??
+  m_Name: What are these?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3266,6 +3266,8 @@ GameObject:
   m_Component:
   - component: {fileID: 823255822}
   - component: {fileID: 823255823}
+  - component: {fileID: 823255824}
+  - component: {fileID: 823255825}
   m_Layer: 0
   m_Name: chest
   m_TagString: Untagged
@@ -3342,6 +3344,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &823255824
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823255821}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.3125}
+  serializedVersion: 2
+  m_Radius: 3
+--- !u!114 &823255825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823255821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152599c7da5854f449d70a74dbbf400e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &864522570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4034,7 +4064,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311994537
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -7341407202210888751, guid: 5dd3dd4842dcc44408f8ea27c6b86c89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6021,6 +6051,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5f6481ceb722c47ae5a8467b22c8f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 1542555479}
+  _light: {fileID: 2077115793}
+  _chest: {fileID: 823255821}
 --- !u!1 &1527533638
 GameObject:
   m_ObjectHideFlags: 0
@@ -6225,7 +6258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542555479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.23, y: -7.93, z: 0}
+  m_LocalPosition: {x: 30.18, y: -7.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 286164614}
@@ -6514,7 +6547,7 @@ GameObject:
   - component: {fileID: 1607595222}
   m_Layer: 0
   m_Name: body_collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8864,7 +8897,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311994537
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -7341407202210888751, guid: 5dd3dd4842dcc44408f8ea27c6b86c89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8887,7 +8920,7 @@ GameObject:
   - component: {fileID: 2075391857}
   m_Layer: 0
   m_Name: feet_collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
