@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,8 @@ namespace ACoolTeam
         [SerializeField] private Rigidbody2D _playerRigidBody;
         [SerializeField] private SpriteRenderer _playerSpriteRenderer;
         [SerializeField] private Animator _playerAnimator;
+        [SerializeField] private Collider2D _bodyCollider;
+        [SerializeField] private Collider2D _crawlCollider;
 
         // player animation
         [SerializeField] private AnimationClip _playerWalkAnim;
@@ -30,10 +33,11 @@ namespace ACoolTeam
         private bool _isGrounded;
 
         // jump vars
+        [SerializeField] private float _jumpVelocity;
+        private float _jumpCooldown;
         private bool _isJumpPressed = false;
         private bool _isJumping;
-        [SerializeField] 
-        private float _jumpVelocity;
+        private bool _canJump;
 
         // crawl vars
         private bool _isCrawling = false;
@@ -55,6 +59,8 @@ namespace ACoolTeam
         public Rigidbody2D PlayerRigidBody { get { return _playerRigidBody; } set { _playerRigidBody = value; } }
         public SpriteRenderer PlayerSpriteRenderer { get { return _playerSpriteRenderer; } }
         public Animator PlayerAnimator { get { return _playerAnimator; } }
+        public Collider2D BodyCollider { get { return _bodyCollider; } }
+        public Collider2D CrawlCollider { get { return _crawlCollider; } }
         public AnimationClip PlayerIdleAnim { get { return _playerIdleAnim; } }
         public AnimationClip PlayerWalkAnim { get { return _playerWalkAnim; } }
         public AnimationClip PlayerCrawlIdleAnim { get { return _playerCrawlIdleAnim; } }
@@ -64,8 +70,10 @@ namespace ACoolTeam
         public bool IsJumpPressed { get { return _isJumpPressed; } }
         public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
         public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
+        public bool CanJump { get { return _canJump; } set { _canJump = value; } }
         public bool IsCrawling { get { return _isCrawling; } }
         public float JumpVelocity { get { return _jumpVelocity; } set { _jumpVelocity = value; } }
+        public float JumpCooldown { get { return _jumpCooldown; } set { _jumpCooldown = value; } }
         public float PlayerSpeed { get { return _speed; } set { _speed = value; } }
         public float BaseSpeed { get { return _baseSpeed; } }
         public float CrawSpeedMultipler { get { return _crawlSpeedMultipler; } }
@@ -80,6 +88,7 @@ namespace ACoolTeam
             _states = new PlayerStateFactory(this);
             _playerInput = new PlayerInput();
             _baseSpeed = _speed;
+            _crawlCollider.enabled = false;
 
             // always start player in the grounded state
             _currentState = _states.Grounded();
@@ -108,6 +117,14 @@ namespace ACoolTeam
         {
             _playerRigidBody.velocity = new Vector2(_currentMovementInput.x * _speed, _playerRigidBody.velocity.y);
             _currentState.UpdateStates();
+            UpdateCooldown();
+        }
+
+        private void UpdateCooldown()
+        {
+            _jumpCooldown -= Time.deltaTime;
+            if (_jumpCooldown <= 0)
+                _canJump = true;
         }
 
         #endregion

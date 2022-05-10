@@ -28,7 +28,7 @@ namespace ACoolTeam
 
         public override void CheckSwitchStates()
         {
-            if (Ctx.IsGrounded && !Ctx.IsJumping && Ctx.IsJumpPressed)
+            if (Ctx.IsGrounded && !Ctx.IsJumping && Ctx.IsJumpPressed && Ctx.CanJump)
                 SwitchState(Factory.Jump());
             else if(Ctx.IsCrawling)
                 SwitchState(Factory.Crawling());

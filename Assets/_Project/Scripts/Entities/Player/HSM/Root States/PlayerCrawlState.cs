@@ -15,6 +15,8 @@ namespace ACoolTeam
             Debug.Log("Entered Crawl State");
             Ctx.IsGrounded = true;
             Ctx.PlayerSpeed = Ctx.BaseSpeed * Ctx.CrawSpeedMultipler;
+            Ctx.BodyCollider.enabled = false;
+            Ctx.CrawlCollider.enabled = true;
             AnimHandle();
         }
 
@@ -26,6 +28,8 @@ namespace ACoolTeam
         public override void ExitState()
         {
             Ctx.PlayerSpeed = Ctx.BaseSpeed;
+            Ctx.BodyCollider.enabled = true;
+            Ctx.CrawlCollider.enabled = false;
             AnimHandle();
         }
 
