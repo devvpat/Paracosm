@@ -17,11 +17,18 @@ namespace ACoolTeam
         private void OnEnable()
         {
             ChestAI.OnEnterRange += ChangePosition;
+            LeverAI.OnLeverActivate += StopChest;
         }
 
         private void OnDisable()
         {
             ChestAI.OnEnterRange -= ChangePosition;
+            LeverAI.OnLeverActivate -= StopChest;
+        }
+
+        private void StopChest()
+        {
+            _triggerEntered = false;
         }
 
         private void ChangePosition()
