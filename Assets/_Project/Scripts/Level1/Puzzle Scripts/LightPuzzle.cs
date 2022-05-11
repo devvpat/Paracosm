@@ -17,11 +17,13 @@ namespace ACoolTeam
         private void OnEnable()
         {
             ChestAI.OnEnterRange += ChangePosition;
+            LeverAI.OnLeverPress += StopChestMechanic;
         }
 
         private void OnDisable()
         {
             ChestAI.OnEnterRange -= ChangePosition;
+            LeverAI.OnLeverPress -= StopChestMechanic;
         }
 
         private void ChangePosition()
@@ -33,10 +35,14 @@ namespace ACoolTeam
             }
         }
 
+        private void StopChestMechanic()
+        {
+            _triggerEntered = false;
+        }
+
 
         private IEnumerator FlickerChest()
         {
-            Debug.Log("Flick Co Started");
             ToggleChest(false);
             yield return new WaitForSeconds(0.15f);
             ToggleChest(true);
