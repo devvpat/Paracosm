@@ -4,18 +4,19 @@ using UnityEngine;
 
 namespace ACoolTeam
 {
-    public class PuzzleLockpick : MonoBehaviour
+    public class PuzzleLockpick : MonoBehaviour, IPuzzle
     {
-        // Start is called before the first frame update
-        void Start()
+
+
+        public void OnPuzzleStart()
         {
-        
+            
         }
 
-        // Update is called once per frame
-        void Update()
+        public void OnPuzzleEnd()
         {
-        
+            
         }
+
     }
 }

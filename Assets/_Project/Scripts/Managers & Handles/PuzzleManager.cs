@@ -6,7 +6,11 @@ namespace ACoolTeam
 {
     public class PuzzleManager : MonoBehaviour
     {
+        public delegate void PuzzleAction();
+        public static event PuzzleAction OnPuzzleInteract;
         public static PuzzleManager Instance { get; private set; }
+
+        private IPuzzle _currentPuzzle;
 
         private void Awake()
         {
@@ -18,8 +22,9 @@ namespace ACoolTeam
             else if (Instance != this) Destroy(this);
         }
 
-        public void StartPuzzle()
+        public void StartPuzzle(IPuzzle puzzle)
         {
+            _currentPuzzle = puzzle;
             Debug.Log("Puzzle started");
         }
     }

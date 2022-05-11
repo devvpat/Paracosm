@@ -15,28 +15,12 @@ MonoBehaviour:
   StackSize: 99
   Container:
     Slots:
-    - ID: 0
-      Name: Sword
+    - ID: -1
+      Name: 
       CurrentStack: 1
       SlotItem:
-        Name: Sword
+        Name: 
         Id: 0
-        UiDisplay: {fileID: -2550652238514681116, guid: 03874d5d5e106014997065ecee22fc24, type: 3}
-        ItemType: 2
-    - ID: 1
-      Name: Pickaxe
-      CurrentStack: 1
-      SlotItem:
-        Name: Pickaxe
-        Id: 1
-        UiDisplay: {fileID: -8946098821305995989, guid: 03874d5d5e106014997065ecee22fc24, type: 3}
-        ItemType: 2
-    - ID: -1
-      Name: 
-      CurrentStack: 0
-      SlotItem:
-        Name: 
-        Id: -1
         UiDisplay: {fileID: 0}
         ItemType: 0
     - ID: -1
@@ -44,7 +28,7 @@ MonoBehaviour:
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
     - ID: -1
@@ -52,7 +36,7 @@ MonoBehaviour:
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
     - ID: -1
@@ -60,7 +44,7 @@ MonoBehaviour:
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
     - ID: -1
@@ -68,7 +52,7 @@ MonoBehaviour:
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
     - ID: -1
@@ -76,7 +60,7 @@ MonoBehaviour:
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
     - ID: -1
@@ -84,7 +68,7 @@ MonoBehaviour:
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0
     - ID: -1
@@ -92,6 +76,22 @@ MonoBehaviour:
       CurrentStack: 0
       SlotItem:
         Name: 
-        Id: -1
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: -1
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: -1
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
         UiDisplay: {fileID: 0}
         ItemType: 0

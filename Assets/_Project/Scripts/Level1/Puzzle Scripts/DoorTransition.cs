@@ -5,6 +5,7 @@ namespace ACoolTeam
 {
     public class DoorTransition : MonoBehaviour
     {
+        [SerializeField] private PuzzleLockpick _lockPickPuzzle;
 
         private PlayerInput _playerInput;
         private bool _inRange;
@@ -30,7 +31,7 @@ namespace ACoolTeam
         {
             if (_inRange)
             {
-                PuzzleManager.Instance.StartPuzzle();
+                PuzzleManager.Instance.StartPuzzle(_lockPickPuzzle);
             }
         }
 

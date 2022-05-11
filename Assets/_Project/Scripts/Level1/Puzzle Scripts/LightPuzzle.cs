@@ -61,6 +61,7 @@ namespace ACoolTeam
             ToggleChest(true);
             SetPositions();
         }
+
         private void ToggleChest(bool var)
         {
             _light.SetActive(var);
