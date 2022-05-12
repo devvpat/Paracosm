@@ -14,6 +14,10 @@ namespace ACoolTeam
         {
             Debug.Log("Entered Grounded State");
             Ctx.IsGrounded = true;
+            if(Ctx.IsMovementPressed)
+                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerWalkAnim);
+            else
+                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerIdleAnim);
         }
 
         public override void UpdateState()

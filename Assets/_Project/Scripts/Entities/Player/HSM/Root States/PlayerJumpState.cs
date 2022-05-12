@@ -31,6 +31,8 @@ namespace ACoolTeam
         {
             Ctx.IsJumping = false;
             Ctx.IsGrounded = true;
+            //if(Ctx.IsMovementPressed)
+            //    AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerJumpAnim);
         }
 
         public override void CheckSwitchStates()
