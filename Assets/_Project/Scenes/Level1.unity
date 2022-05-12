@@ -1304,6 +1304,7 @@ MonoBehaviour:
   _playerIdleAnim: {fileID: 7400000, guid: 56c5dbab85e227145a3c2ac492cf2826, type: 2}
   _playerCrawlIdleAnim: {fileID: 7400000, guid: 58a83dd88a7512e45b2f23bd40b6a984, type: 2}
   _playerCrawlMoveAnim: {fileID: 7400000, guid: 9002c2a0fb59b3e459e01d704075d2de, type: 2}
+  _playerJumpAnim: {fileID: 7400000, guid: 0502f1b8a62d6514fae05d51e5531cc5, type: 2}
   _jumpVelocity: 10
   _crawlSpeedMultipler: 0.5
   _speed: 2.5
