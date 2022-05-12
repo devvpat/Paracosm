@@ -37,10 +37,13 @@ namespace ACoolTeam
 
         private void AnimHandle()
         {
-            if(!Ctx.IsCrawling)
-                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerIdleAnim);
-            else
-                AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerCrawlIdleAnim);
+            if (!Ctx.IsJumping)
+            {
+                if (!Ctx.IsCrawling)
+                    AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerIdleAnim);
+                else
+                    AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerCrawlIdleAnim);
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ namespace ACoolTeam
             Ctx.CanJump = false;
             Ctx.JumpCooldown = 1f;
             Ctx.PlayerRigidBody.velocity = Vector2.up * Ctx.JumpVelocity;
+            AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerJumpAnim);
         }
 
         public override void UpdateState()

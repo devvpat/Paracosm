@@ -26,6 +26,7 @@ namespace ACoolTeam
         [SerializeField] private AnimationClip _playerIdleAnim;
         [SerializeField] private AnimationClip _playerCrawlIdleAnim;
         [SerializeField] private AnimationClip _playerCrawlMoveAnim;
+        [SerializeField] private AnimationClip _playerJumpAnim; //ty jump anim
 
         // state params
         private bool _isMovementPressed;
@@ -65,6 +66,7 @@ namespace ACoolTeam
         public AnimationClip PlayerWalkAnim { get { return _playerWalkAnim; } }
         public AnimationClip PlayerCrawlIdleAnim { get { return _playerCrawlIdleAnim; } }
         public AnimationClip PlayerCrawlMoveAnim { get { return _playerCrawlMoveAnim; } }
+        public AnimationClip PlayerJumpAnim { get { return _playerJumpAnim; } } //ty get jump anim
         public bool IsMovementPressed { get { return _isMovementPressed; } }
         public bool IsActionPressed { get { return _isActionPressed; } }
         public bool IsJumpPressed { get { return _isJumpPressed; } }
