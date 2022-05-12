@@ -1613,6 +1613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 384001079}
+  - component: {fileID: 384001080}
   m_Layer: 0
   m_Name: Lockpick Puzzle
   m_TagString: Untagged
@@ -1641,6 +1642,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &384001080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384001078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a54f55605cffc4f8b33ca3ff7cd785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408082237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,6 +2537,7 @@ GameObject:
   - component: {fileID: 626348525}
   - component: {fileID: 626348527}
   - component: {fileID: 626348526}
+  - component: {fileID: 626348528}
   m_Layer: 0
   m_Name: Lockpick
   m_TagString: Untagged
@@ -2538,13 +2552,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626348524}
-  m_LocalRotation: {x: -0, y: -0, z: 0.15889153, w: -0.98729604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 384001079}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1098.285}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.0000026226044, y: 14.999985}
@@ -2588,6 +2602,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626348524}
   m_CullTransparentMesh: 1
+--- !u!95 &626348528
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626348524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39642f3953fdee54aa0035fefa4f3cd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &630344642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5303,6 +5336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9664f9687cc2c644fb6fff020dfbf08f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _taskView: {fileID: 2090698515}
 --- !u!1001 &1264539852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8394,6 +8428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cdc782c2e88bf4c89b7198b9feb79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lockPickPuzzle: {fileID: 0}
 --- !u!61 &2001414876
 BoxCollider2D:
   m_ObjectHideFlags: 0
