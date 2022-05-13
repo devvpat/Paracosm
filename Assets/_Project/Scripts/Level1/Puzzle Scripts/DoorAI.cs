@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace ACoolTeam
 {
+    [RequireComponent(typeof(SM_PlaySound))]
     public class DoorAI : MonoBehaviour
     {
         [SerializeField] private DoorAI _link;
         [SerializeField] private GameObject _player;
         [SerializeField] private bool _canEnter;
+        [SerializeField] private Image _blackBackground;
+        [SerializeField] private float _fadeTime;
 
         private PlayerInput _playerInput;
         private bool _playerInBounds;
@@ -35,8 +39,34 @@ namespace ACoolTeam
         {
             if (_playerInBounds && _canEnter) 
             {
-                _player.transform.position = _link.transform.position;
+                StartCoroutine(FadeScreen());
             }
+        }
+
+        private IEnumerator FadeScreen()
+        {
+            GetComponent<SM_PlaySound>().PlayClip(SM_PlaySound.SoundType.SFX);  //play door sound
+            if (_blackBackground.color.a == 0)  //play animation if animation not already playing
+            {
+                float timeCount = 0;
+                while (_blackBackground.color.a < 1)
+                {
+                    _blackBackground.color = new Color(0, 0, 0, Mathf.Lerp(0, 1, timeCount / (_fadeTime / 2)));
+                    timeCount += Time.deltaTime;
+                    yield return null;
+                }
+                _blackBackground.color = new Color(0, 0, 0, 1);
+                timeCount = 0;
+                _player.transform.position = _link.transform.position;
+                while (_blackBackground.color.a > 0)
+                {
+                    _blackBackground.color = new Color(0, 0, 0, Mathf.Lerp(1, 0, timeCount / (_fadeTime / 2)));
+                    timeCount += Time.deltaTime;
+                    yield return null;
+                }
+                _blackBackground.color = new Color(0, 0, 0, 0);
+            }
+            else _player.transform.position = _link.transform.position;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
