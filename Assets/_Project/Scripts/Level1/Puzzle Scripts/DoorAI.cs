@@ -15,6 +15,7 @@ namespace ACoolTeam
         [SerializeField] private bool _canEnter;
         [SerializeField] private Image _blackBackground;
         [SerializeField] private float _fadeTime;
+        [SerializeField] private float _doorSpawnOffset;    //players teleports this much down (y pos) relative to linked door's pos
 
         private PlayerInput _playerInput;
         private bool _playerInBounds;
@@ -57,7 +58,7 @@ namespace ACoolTeam
                 }
                 _blackBackground.color = new Color(0, 0, 0, 1);
                 timeCount = 0;
-                _player.transform.position = _link.transform.position;
+                _player.transform.position = _link.transform.position - new Vector3(0, _doorSpawnOffset, 0);
                 while (_blackBackground.color.a > 0)
                 {
                     _blackBackground.color = new Color(0, 0, 0, Mathf.Lerp(1, 0, timeCount / (_fadeTime / 2)));
@@ -66,7 +67,7 @@ namespace ACoolTeam
                 }
                 _blackBackground.color = new Color(0, 0, 0, 0);
             }
-            else _player.transform.position = _link.transform.position;
+            else _player.transform.position = _link.transform.position - new Vector3(0, _doorSpawnOffset, 0);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
