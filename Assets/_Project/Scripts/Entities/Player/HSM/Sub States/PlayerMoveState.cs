@@ -9,7 +9,7 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-            Debug.Log("Entered Move State");
+            //Debug.Log("Entered Move State");
             AnimHandle();
         }
 

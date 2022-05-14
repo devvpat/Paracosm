@@ -98,6 +98,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""A"",
+                    ""type"": ""Button"",
+                    ""id"": ""79eb2377-ca58-42b8-9298-4a0eb5e1e001"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""D"",
+                    ""type"": ""Button"",
+                    ""id"": ""372a7952-2f69-4cdd-ae29-f550a1d42529"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -373,6 +391,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Esc"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b93e7bf-53be-45c6-b064-f56c6e5893c7"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""772305b3-d8d9-4ff1-8c82-260ced5ae031"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""D"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -968,6 +1008,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_Crawl = m_Player.FindAction("Crawl", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Esc = m_Player.FindAction("Esc", throwIfNotFound: true);
+        m_Player_A = m_Player.FindAction("A", throwIfNotFound: true);
+        m_Player_D = m_Player.FindAction("D", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1047,6 +1089,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crawl;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Esc;
+    private readonly InputAction m_Player_A;
+    private readonly InputAction m_Player_D;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -1059,6 +1103,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Crawl => m_Wrapper.m_Player_Crawl;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Esc => m_Wrapper.m_Player_Esc;
+        public InputAction @A => m_Wrapper.m_Player_A;
+        public InputAction @D => m_Wrapper.m_Player_D;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1092,6 +1138,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Esc.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
                 @Esc.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
                 @Esc.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEsc;
+                @A.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnA;
+                @A.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnA;
+                @A.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnA;
+                @D.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnD;
+                @D.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnD;
+                @D.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnD;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1120,6 +1172,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Esc.started += instance.OnEsc;
                 @Esc.performed += instance.OnEsc;
                 @Esc.canceled += instance.OnEsc;
+                @A.started += instance.OnA;
+                @A.performed += instance.OnA;
+                @A.canceled += instance.OnA;
+                @D.started += instance.OnD;
+                @D.performed += instance.OnD;
+                @D.canceled += instance.OnD;
             }
         }
     }
@@ -1284,6 +1342,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnCrawl(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnEsc(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
+        void OnD(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

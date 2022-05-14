@@ -5,10 +5,11 @@ namespace ACoolTeam
 {
     public class DoorTransition : MonoBehaviour
     {
-        [SerializeField] private PuzzleLockpick _lockPickPuzzle;
+        [SerializeField] private GameObject _puzzleGameObject;
 
         private PlayerInput _playerInput;
         private bool _inRange;
+        private bool _puzzleStarted;
 
         private void Awake()
         {
@@ -19,19 +20,35 @@ namespace ACoolTeam
 
         private void OnEnable()
         {
+            PuzzleLockpick.OnPuzzleComplete += PuzzleComplete;
             _playerInput.Enable();
         }
 
         private void OnDisable()
         {
+            PuzzleLockpick.OnPuzzleComplete -= PuzzleComplete;
             _playerInput.Disable();
         }
 
         private void Interact(InputAction.CallbackContext obj)
         {
-            if (_inRange)
+            if (_inRange && !PuzzleManager.PuzzlePlaying && !_puzzleStarted)
             {
-                PuzzleManager.Instance.StartPuzzle(_lockPickPuzzle);
+                _puzzleStarted = true;
+                PuzzleManager.Instance.StartPuzzle(_puzzleGameObject);
+            }
+        }
+
+        private void PuzzleComplete()
+        {
+            if (_puzzleStarted)
+            {
+                // play open door animation
+
+                // play open door sound
+
+                // we can just keep this for now for the alpha i think unless someone wants to change it.
+                Destroy(gameObject);
             }
         }
 

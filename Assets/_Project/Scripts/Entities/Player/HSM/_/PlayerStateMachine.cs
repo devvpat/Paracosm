@@ -107,11 +107,15 @@ namespace ACoolTeam
 
         private void OnEnable()
         {
+            PuzzleManager.OnPuzzleStart += RestrictMovement;
+            PuzzleManager.OnPuzzleEnd += UnrestrictMovement;
             _playerInput.Enable();
         }
 
         private void OnDisable()
         {
+            PuzzleManager.OnPuzzleStart -= RestrictMovement;
+            PuzzleManager.OnPuzzleEnd -= UnrestrictMovement;
             _playerInput.Disable();
         }
 
@@ -122,20 +126,13 @@ namespace ACoolTeam
             UpdateCooldown();
         }
 
-        private void UpdateCooldown()
-        {
-            _jumpCooldown -= Time.deltaTime;
-            if (_jumpCooldown <= 0)
-                _canJump = true;
-        }
-
         #endregion
 
         #region Input Methods
         private void OnMoveInput(InputAction.CallbackContext context)
         {
             _currentMovementInput = context.ReadValue<Vector2>();
-            _isMovementPressed = _currentMovementInput.x != 0 || _currentMovementInput.y != 0;
+            _isMovementPressed = _currentMovementInput.x != 0;
 
             if (_currentMovementInput.x > 0)
                 _playerSpriteRenderer.flipX = false;
@@ -153,6 +150,35 @@ namespace ACoolTeam
             _isCrawling = !_isCrawling;
         }
 
+        #endregion
+
+        #region Misc Methods
+        private void UpdateCooldown()
+        {
+            _jumpCooldown -= Time.deltaTime;
+            if (_jumpCooldown <= 0)
+                _canJump = true;
+        }
+
+        private void RestrictMovement()
+        {
+            _playerInput.Player.Move.started -= OnMoveInput;
+            _playerInput.Player.Move.performed -= OnMoveInput;
+            _playerInput.Player.Move.canceled -= OnMoveInput;
+            _playerInput.Player.Jump.started -= OnJumpInput;
+            _playerInput.Player.Jump.canceled -= OnJumpInput;
+            _playerInput.Player.Crawl.started -= OnCrawlInput;
+        }
+
+        private void UnrestrictMovement()
+        {
+            _playerInput.Player.Move.started += OnMoveInput;
+            _playerInput.Player.Move.performed += OnMoveInput;
+            _playerInput.Player.Move.canceled += OnMoveInput;
+            _playerInput.Player.Jump.started += OnJumpInput;
+            _playerInput.Player.Jump.canceled += OnJumpInput;
+            _playerInput.Player.Crawl.started += OnCrawlInput;
+        }
         #endregion
     }
 }

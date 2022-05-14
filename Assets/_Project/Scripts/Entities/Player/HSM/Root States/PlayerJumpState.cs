@@ -12,7 +12,7 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-            Debug.Log("Entered Jump State");
+            //Debug.Log("Entered Jump State");
             Ctx.IsJumping = true;
             Ctx.IsGrounded = false;
             Ctx.CanJump = false;

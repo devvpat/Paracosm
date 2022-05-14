@@ -12,7 +12,7 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-            Debug.Log("Entered Crawl State");
+            //Debug.Log("Entered Crawl State");
             Ctx.IsGrounded = true;
             Ctx.PlayerSpeed = Ctx.BaseSpeed * Ctx.CrawSpeedMultipler;
             Ctx.BodyCollider.enabled = false;

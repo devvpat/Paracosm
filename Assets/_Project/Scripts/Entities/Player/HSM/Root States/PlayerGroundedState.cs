@@ -12,7 +12,7 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
-            Debug.Log("Entered Grounded State");
+            //Debug.Log("Entered Grounded State");
             Ctx.IsGrounded = true;
             if(Ctx.IsMovementPressed)
                 AnimationManager.ChangeAnimState(Ctx.PlayerAnimator, Ctx.PlayerWalkAnim);
