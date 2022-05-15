@@ -1,9 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
 namespace ACoolTeam
 {
-    public class DoorTransition : MonoBehaviour
+    public class BeginRitual : MonoBehaviour
     {
         [SerializeField] private GameObject _puzzleGameObject;
 
@@ -20,13 +22,11 @@ namespace ACoolTeam
 
         private void OnEnable()
         {
-            PuzzleLockpick.OnPuzzleComplete += PuzzleComplete;
             _playerInput.Enable();
         }
 
         private void OnDisable()
         {
-            PuzzleLockpick.OnPuzzleComplete -= PuzzleComplete;
             _playerInput.Disable();
         }
 
@@ -35,20 +35,7 @@ namespace ACoolTeam
             if (_inRange && !PuzzleManager.PuzzlePlaying && !_puzzleStarted)
             {
                 _puzzleStarted = true;
-                PuzzleManager.Instance.StartPuzzle(_puzzleGameObject, true);
-            }
-        }
-
-        private void PuzzleComplete()
-        {
-            if (_puzzleStarted)
-            {
-                // play open door animation
-
-                // play open door sound
-
-                // we can just keep this for now for the alpha i think unless someone wants to change it.
-                Destroy(gameObject);
+                PuzzleManager.Instance.StartPuzzle(_puzzleGameObject, false);
             }
         }
 
