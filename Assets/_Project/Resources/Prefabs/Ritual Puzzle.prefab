@@ -359,7 +359,7 @@ RectTransform:
   m_Children:
   - {fileID: 148628686}
   m_Father: {fileID: 4644052734415869129}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -706,8 +706,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1004331775}
   - {fileID: 5165439528206776139}
+  - {fileID: 1004331775}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -764,7 +764,7 @@ RectTransform:
   - {fileID: 1168463710}
   - {fileID: 1593528925}
   m_Father: {fileID: 4644052734415869129}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -783,6 +783,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115a4e5d5f7b383449f5650ff0f40edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _topPivot: {fileID: 1168463710}
+  _botPivot: {fileID: 1593528925}
 --- !u!95 &968349696
 Animator:
   serializedVersion: 3

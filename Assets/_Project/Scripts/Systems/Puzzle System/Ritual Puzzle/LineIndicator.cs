@@ -9,6 +9,8 @@ namespace ACoolTeam
     {
         public delegate void SweetSpotAction();
         public static event SweetSpotAction OnSweetSpot;
+        public delegate void NotSweetSpotAction();
+        public static event NotSweetSpotAction NotOnSweetSpot;
 
         private bool _onSweetSpot;
 
@@ -24,7 +26,10 @@ namespace ACoolTeam
 
         private void PauseHandle()
         {
-            if (_onSweetSpot) OnSweetSpot?.Invoke();
+            if (_onSweetSpot)
+                OnSweetSpot?.Invoke();
+            else
+                NotOnSweetSpot?.Invoke();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

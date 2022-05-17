@@ -18,6 +18,7 @@ namespace ACoolTeam
 
         private PlayerInput _playerInput;
         private bool _canInput = true;
+        private int _gameProgress = 3;
 
         private void Awake()
         {
@@ -29,12 +30,14 @@ namespace ACoolTeam
         private void OnEnable()
         {
             LineIndicator.OnSweetSpot += CompletedOverlap;
+            LineIndicator.NotOnSweetSpot += UncompletedOverlap;
             _playerInput.Enable();
         }
 
         private void OnDisable()
         {
             LineIndicator.OnSweetSpot -= CompletedOverlap;
+            LineIndicator.NotOnSweetSpot -= UncompletedOverlap;
             _playerInput.Disable();
         }
 
@@ -57,7 +60,14 @@ namespace ACoolTeam
 
         private void CompletedOverlap()
         {
-            Debug.Log("COmpleted OVer lap!");
+            Debug.Log("Completed Overlap!");
+            _gameProgress++;
+        }
+
+        private void UncompletedOverlap()
+        {
+            Debug.Log("Missed Overlap!");
+            _gameProgress--;
         }
 
         private void PauseIndicator(InputAction.CallbackContext context)

@@ -10,6 +10,7 @@ namespace ACoolTeam
         [SerializeField] private GameObject _puzzleGameObject;
 
         private PlayerInput _playerInput;
+        private int _gameProgress = 3;
         private bool _inRange;
         private bool _puzzleStarted;
 
