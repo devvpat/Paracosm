@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd9ffb319609f8c4d818523e7025c3fa, type: 3}
-  m_Name: item_Sword
+  m_Name: item_axe
   m_EditorClassIdentifier: 
-  Id: 1
-  Name: Pickaxe
-  UiDisplay: {fileID: -8946098821305995989, guid: 03874d5d5e106014997065ecee22fc24, type: 3}
+  Id: 5
+  Name: Axe
+  UiDisplay: {fileID: -5785999488814102013, guid: 40a55b354e02ff546919ef716b4c75f8, type: 3}
   ItemType: 2

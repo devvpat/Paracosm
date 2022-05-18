@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd9ffb319609f8c4d818523e7025c3fa, type: 3}
-  m_Name: item_salt
+  m_Name: item_letter
   m_EditorClassIdentifier: 
-  Id: 1
-  Name: Salt Can
-  UiDisplay: {fileID: -3409314698919782936, guid: 3c4173ca2231ee945987fb2c16d4bcec, type: 3}
+  Id: 2
+  Name: Letter
+  UiDisplay: {fileID: -4181906289457810447, guid: b0c2885054b76ef4398c7dd0796f9c8a, type: 3}
   ItemType: 1

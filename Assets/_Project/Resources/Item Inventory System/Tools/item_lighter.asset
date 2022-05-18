@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd9ffb319609f8c4d818523e7025c3fa, type: 3}
-  m_Name: item_Pickaxe
+  m_Name: item_lighter
   m_EditorClassIdentifier: 
   Id: 0
-  Name: Sword
-  UiDisplay: {fileID: -2550652238514681116, guid: 03874d5d5e106014997065ecee22fc24, type: 3}
+  Name: Lighter
+  UiDisplay: {fileID: 3107578013218473916, guid: 3824000c69d00aa49a8641a8b047ba83, type: 3}
   ItemType: 2

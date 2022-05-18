@@ -17,7 +17,7 @@ MonoBehaviour:
     Slots:
     - ID: -1
       Name: 
-      CurrentStack: 1
+      CurrentStack: 0
       SlotItem:
         Name: 
         Id: 0
