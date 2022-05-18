@@ -9,6 +9,7 @@ namespace ACoolTeam
 
         public override void EnterState()
         {
+            SoundManager.Instance.StartFootsteps();
             //Debug.Log("Entered Move State");
             AnimHandle();
         }
@@ -20,7 +21,7 @@ namespace ACoolTeam
 
         public override void ExitState()
         {
-
+            SoundManager.Instance.EndFoodsteps();
         }
 
         public override void CheckSwitchStates()

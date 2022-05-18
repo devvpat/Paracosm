@@ -5,10 +5,14 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
 
+    public float MaxVol = 1f;
+
     [SerializeField]
     private AudioSource _sfxSource;
     [SerializeField]
     private AudioSource _bgmSource;
+    [SerializeField]
+    private AudioSource _playerFootstepsSource;
 
     private bool _fadeDone;
 
@@ -23,19 +27,56 @@ public class SoundManager : MonoBehaviour
         else if (Instance != this) Destroy(this);
     }
 
+    private void Start()
+    {
+        _bgmSource.playOnAwake = false;
+    }
+
+    public void StartFootsteps()
+    {
+        _playerFootstepsSource.Play();
+    }
+
+    public void EndFoodsteps()
+    {
+        _playerFootstepsSource.Stop();
+    }
+
     //Plays a given clip at a given volume in the according audio source (sound effects)
     //*Does NOT replace current clip being played
     public void PlaySFX(AudioClip clip, float volume)
     {
-        _sfxSource.PlayOneShot(clip, volume);
+        _sfxSource.PlayOneShot(clip, Mathf.Min(MaxVol, volume));
+    }
+
+    public void StartBGM()
+    {
+        _bgmSource.volume = MaxVol;
+        _bgmSource.Play();
+    }
+
+    public void StopBGM()
+    {
+        _bgmSource.Stop();
     }
 
     //Plays a given clip at a given volume in the according audio source (background effects)
     //*REPLACES old BGM with new clip
     public IEnumerator PlayBGM(AudioClip clip, float volume, bool fade, float fadeOutTime, float fadeInTime)
     {
-        //fades old audio out, and new audio in
-        if (fade)
+        volume = Mathf.Min(MaxVol, volume);
+        //if no clip, just fade out volume and stop then reset volume to 1 (not playing anything)
+        if (clip == null)
+        {
+            _fadeDone = false;
+            StartCoroutine(FadeAudio(_bgmSource, 0, fadeOutTime));
+            while (!_fadeDone) yield return null;
+            _bgmSource.Stop();
+            _bgmSource.volume = 1;
+            yield break;
+        }
+        //fades old audio out, and new audio in if given a clip
+        else if (fade)
         {
             _fadeDone = false;
             StartCoroutine(FadeAudio(_bgmSource, 0, fadeOutTime));
@@ -43,7 +84,7 @@ public class SoundManager : MonoBehaviour
             _bgmSource.Stop();
             _bgmSource.clip = clip;
             _bgmSource.Play();
-            StartCoroutine(FadeAudio(_bgmSource, 1, fadeInTime));
+            StartCoroutine(FadeAudio(_bgmSource, volume, fadeInTime));
         }
         //stops old sound and plays new sound (no transition)
         else
@@ -57,6 +98,8 @@ public class SoundManager : MonoBehaviour
     //Public so it can be called anywhere to do things such as fade out music before switching scenes
     public IEnumerator FadeAudio(AudioSource audSrc, float targetVol, float duration)
     {
+        targetVol = Mathf.Min(MaxVol, targetVol);
+        _fadeDone = false;
         float startVol = audSrc.volume;
         float time = 0;
         targetVol = Mathf.Clamp(targetVol, 0, 1);
@@ -71,7 +114,7 @@ public class SoundManager : MonoBehaviour
         _fadeDone = true;
         yield break;
     }
-    
+   
     //Here bcause properties can't be serialized in editor
     public AudioSource Get_BGMSource()
     {
