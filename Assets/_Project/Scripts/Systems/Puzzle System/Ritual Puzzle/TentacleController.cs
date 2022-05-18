@@ -11,7 +11,7 @@ namespace ACoolTeam
 
         private Vector3 _tentacleInterval = new Vector3(0, 1f, 0);
         private float _intervalTimer = 0.025f;
-        private int _counter = 50;
+        private int _counter = 100;
 
         private void OnEnable()
         {
