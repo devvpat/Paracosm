@@ -26,6 +26,7 @@ namespace ACoolTeam
         {
             PlayerBodyCollider.OnItemPickUp += RefreshInventoryUI;
             DisplaySlot.OnSlotClick += RefreshInventoryUI;
+            ChestBehavior.OnItemPickUp += RefreshInventoryUI;
             BasicStorage.OnChestInteract += EnableChestInventory;
         }
 
@@ -33,6 +34,7 @@ namespace ACoolTeam
         {
             PlayerBodyCollider.OnItemPickUp -= RefreshInventoryUI;
             DisplaySlot.OnSlotClick -= RefreshInventoryUI;
+            ChestBehavior.OnItemPickUp -= RefreshInventoryUI;
             BasicStorage.OnChestInteract -= EnableChestInventory;
         }
 

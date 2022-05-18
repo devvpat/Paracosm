@@ -7,6 +7,10 @@ namespace ACoolTeam
 {
     public class ChestBehavior : MonoBehaviour
     {
+        public delegate void PickUpAction();
+        public static event PickUpAction OnItemPickUp;
+        public bool CanInteract;
+
         [SerializeField] private List<ItemObject> _chestItems;    //put chest items here
         [SerializeField] private InventoryObject _playerInv;    //link player inventory
 
@@ -31,12 +35,14 @@ namespace ACoolTeam
 
         private void Interact(InputAction.CallbackContext obj)
         {
-            if (_playerInBounds)
+            if (_playerInBounds && CanInteract)
             {
+                Debug.Log("Interacted");
                 foreach (ItemObject item in _chestItems)
                 {
                     _playerInv.AddItem(new Item(item), 1);
                 }
+                OnItemPickUp?.Invoke();
             }
         }
 
