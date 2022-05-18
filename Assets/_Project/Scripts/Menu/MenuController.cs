@@ -3,28 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuController : MonoBehaviour 
+namespace ACoolTeam 
 {
-    [SerializeField] private GameObject _youSurvived;
-    [SerializeField] private GameObject _youDied;
-
-    private float _bgmFadeOutTime =.5f;
-
-    private void Awake()
+    public class MenuController : MonoBehaviour
     {
-        SoundManager.Instance.StartBGM();
-    }
+        [SerializeField] private GameObject _youSurvived;
+        [SerializeField] private GameObject _youDied;
 
-    public void PlayGame()
-    {
-        SoundManager.Instance.StopBGM();
-        SceneManager.LoadScene("Level1"); //load level 1 scene
-    }
+        private float _bgmFadeOutTime = .5f;
 
-    public void QuitGame()
-    {
-        Debug.Log("QUIT!");
-        Application.Quit(); //Close the game
-    }
+        private void Awake()
+        {
+            SoundManager.Instance.StartBGM();
+            switch (PuzzleRitual.GameProgress)
+            {
+                case 0:
+                    _youDied.SetActive(true);
+                    _youSurvived.SetActive(false);
+                    break;
+                    
+                case 6:
+                    _youDied.SetActive(false);
+                    _youSurvived.SetActive(true);
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
 
+        public void PlayGame()
+        {
+            SoundManager.Instance.StopBGM();
+            SceneManager.LoadScene("Level1"); //load level 1 scene
+        }
+
+        public void QuitGame()
+        {
+            Debug.Log("QUIT!");
+            Application.Quit(); //Close the game
+        }
+
+    }
 }
+
