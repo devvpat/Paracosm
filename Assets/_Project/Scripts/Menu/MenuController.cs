@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour 
 {
-
+    [SerializeField] private GameObject _youSurvived;
+    [SerializeField] private GameObject _youDied;
 
     private float _bgmFadeOutTime =.5f;
 
