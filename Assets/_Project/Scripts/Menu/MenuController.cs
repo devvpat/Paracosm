@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour 
 {
 
+    private float _bgmFadeOutTime =.5f;
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Level1"); //load level 1 scene
