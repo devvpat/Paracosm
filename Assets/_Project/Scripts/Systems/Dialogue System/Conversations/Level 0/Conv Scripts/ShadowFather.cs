@@ -9,8 +9,6 @@ namespace ACoolTeam
     {
         public delegate void StartAction();
         public static event StartAction OnStart;
-        public delegate void EndAction();
-        public static event EndAction OnIntroEnd;
 
         [SerializeField] private GameObject _fatherObject;
         [SerializeField] private GameObject _basementDoorObject;
@@ -80,7 +78,6 @@ namespace ACoolTeam
             {
                 yield return null;
             }
-            OnIntroEnd?.Invoke();
             gameObject.SetActive(false); //deactivates self once done
         }
     }
