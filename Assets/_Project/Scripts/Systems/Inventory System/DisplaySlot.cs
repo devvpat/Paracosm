@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace ACoolTeam
 {
-    public class DisplaySlot : MonoBehaviour, IPointerClickHandler
+    public class DisplaySlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public delegate void SlotClickAction();
         public static event SlotClickAction OnSlotClick;
@@ -135,6 +135,16 @@ namespace ACoolTeam
                 }
             }
             OnSlotClick?.Invoke();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+
         }
     }
 }
