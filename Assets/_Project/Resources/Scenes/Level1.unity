@@ -2391,7 +2391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408082237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.88, y: -4.88, z: -10}
+  m_LocalPosition: {x: 61.4, y: -3.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 153826311}
@@ -3039,7 +3039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.88, y: -4.88, z: -10}
+  m_LocalPosition: {x: 61.4, y: -3.83, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 630792083}
@@ -5830,10 +5830,6 @@ PrefabInstance:
     - target: {fileID: 4644052734415869130, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
       propertyPath: m_Name
       value: Ritual Puzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644052734415869130, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
@@ -9229,7 +9225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542555479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.88, y: -7.88, z: 0}
+  m_LocalPosition: {x: 61.4, y: -6.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 286164614}
