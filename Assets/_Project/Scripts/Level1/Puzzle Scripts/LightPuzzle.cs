@@ -29,6 +29,7 @@ namespace ACoolTeam
         private void StopChest()
         {
             _triggerEntered = false;
+            if(_chest.TryGetComponent(out ChestBehavior chestBehavior)) chestBehavior.CanInteract = true;
         }
 
         private void ChangePosition()

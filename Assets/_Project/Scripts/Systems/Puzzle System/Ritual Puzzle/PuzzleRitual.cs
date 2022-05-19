@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace ACoolTeam
@@ -10,6 +11,7 @@ namespace ACoolTeam
     {
         public delegate void PauseIndicatorAction();
         public static event PauseIndicatorAction OnPauseIndicator;
+        public static int GameProgress = 3;
 
         [SerializeField] private Animator _lineIndicatorAnimator;
         [SerializeField] private AnimationClip _indicatorAnimation;
@@ -18,7 +20,6 @@ namespace ACoolTeam
 
         private PlayerInput _playerInput;
         private bool _canInput = true;
-        private int _gameProgress = 3;
 
         private void Awake()
         {
@@ -61,13 +62,21 @@ namespace ACoolTeam
         private void CompletedOverlap()
         {
             Debug.Log("Completed Overlap!");
-            _gameProgress++;
+            GameProgress++;
+            if (GameProgress == 6) StartCoroutine(OnLevelComplete());
         }
 
         private void UncompletedOverlap()
         {
             Debug.Log("Missed Overlap!");
-            _gameProgress--;
+            GameProgress--;
+            if(GameProgress == 0) StartCoroutine(OnLevelComplete());
+        }
+
+        private IEnumerator OnLevelComplete()
+        {
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadScene("MenuScene");
         }
 
         private void PauseIndicator(InputAction.CallbackContext context)
