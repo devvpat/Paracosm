@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ namespace ACoolTeam
 
         public PlayerInput PlayerControls;
         [SerializeField] private InventoryObject _playerInventory;
+        [SerializeField] private TMP_Text _selectItem;
 
         #region Enable/Disable
         private void Awake()
@@ -87,6 +89,7 @@ namespace ACoolTeam
             }
             //DisplayHand.RefreshHandSprite(_playerInventory);
             SelectedSlot = _playerInventory.Container.Slots[SelectIndex];
+            _selectItem.text = _playerInventory.Container.Slots[SelectIndex].Name;
         }
         #endregion
     }
