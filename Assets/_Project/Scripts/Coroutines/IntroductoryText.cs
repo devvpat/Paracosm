@@ -14,8 +14,8 @@ namespace ACoolTeam
         // Start is called before the first frame update
         void Start()
         {
-            _blackBackground.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
-            StartCoroutine(IntroductionDialogue());
+            //_blackBackground.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
+            //StartCoroutine(IntroductionDialogue());
         }
 
         private IEnumerator IntroductionDialogue()

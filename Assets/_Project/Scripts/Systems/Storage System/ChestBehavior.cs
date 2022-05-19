@@ -43,6 +43,7 @@ namespace ACoolTeam
                     _playerInv.AddItem(new Item(item), 1);
                 }
                 OnItemPickUp?.Invoke();
+                Destroy(gameObject);
             }
         }
 
