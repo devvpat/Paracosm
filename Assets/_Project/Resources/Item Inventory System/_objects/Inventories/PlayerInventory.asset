@@ -15,54 +15,54 @@ MonoBehaviour:
   StackSize: 99
   Container:
     Slots:
-    - ID: 5
-      Name: Axe
-      CurrentStack: 2
+    - ID: -1
+      Name: 
+      CurrentStack: 0
       SlotItem:
-        Name: Axe
-        Id: 5
-        UiDisplay: {fileID: -5785999488814102013, guid: 40a55b354e02ff546919ef716b4c75f8, type: 3}
-        ItemType: 2
-    - ID: 0
-      Name: Lighter
-      CurrentStack: 2
-      SlotItem:
-        Name: Lighter
+        Name: 
         Id: 0
-        UiDisplay: {fileID: 3107578013218473916, guid: 3824000c69d00aa49a8641a8b047ba83, type: 3}
-        ItemType: 2
-    - ID: 3
-      Name: Lockpick
-      CurrentStack: 1
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: -1
+      Name: 
+      CurrentStack: 0
       SlotItem:
-        Name: Lockpick
-        Id: 3
-        UiDisplay: {fileID: 1404424213550605748, guid: 990ead22d26ee4c41af6536a2cc6433e, type: 3}
-        ItemType: 2
-    - ID: 1
-      Name: Salt Can
-      CurrentStack: 8
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: -1
+      Name: 
+      CurrentStack: 0
       SlotItem:
-        Name: Salt Can
-        Id: 1
-        UiDisplay: {fileID: -3409314698919782936, guid: 3c4173ca2231ee945987fb2c16d4bcec, type: 3}
-        ItemType: 1
-    - ID: 4
-      Name: Flashlight
-      CurrentStack: 7
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: -1
+      Name: 
+      CurrentStack: 0
       SlotItem:
-        Name: Flashlight
-        Id: 4
-        UiDisplay: {fileID: -2638390803197812687, guid: db971168c1ac5b144a9719ab5a37effb, type: 3}
-        ItemType: 2
-    - ID: 2
-      Name: Letter
-      CurrentStack: 4
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: -1
+      Name: 
+      CurrentStack: 0
       SlotItem:
-        Name: Letter
-        Id: 2
-        UiDisplay: {fileID: -4181906289457810447, guid: b0c2885054b76ef4398c7dd0796f9c8a, type: 3}
-        ItemType: 1
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
+    - ID: -1
+      Name: 
+      CurrentStack: 0
+      SlotItem:
+        Name: 
+        Id: 0
+        UiDisplay: {fileID: 0}
+        ItemType: 0
     - ID: -1
       Name: 
       CurrentStack: 0
