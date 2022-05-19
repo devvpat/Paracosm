@@ -32,7 +32,7 @@ namespace ACoolTeam
 
         private void Interact(InputAction.CallbackContext obj)
         {
-            if (_inRange && !PuzzleManager.PuzzlePlaying && !_puzzleStarted)
+            if (_inRange && !PuzzleManager.PuzzlePlaying && !_puzzleStarted && HotbarHandle.SelectedSlot.ID == 3)
             {
                 _puzzleStarted = true;
                 PuzzleManager.Instance.StartPuzzle(_puzzleGameObject, true);
@@ -48,6 +48,8 @@ namespace ACoolTeam
                 // play open door sound
 
                 // we can just keep this for now for the alpha i think unless someone wants to change it.
+
+                HotbarHandle.SelectedSlot = null;
                 Destroy(gameObject);
             }
         }

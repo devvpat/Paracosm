@@ -23,11 +23,15 @@ namespace ACoolTeam
         }
         private void OnEnable()
         {
+            PuzzleManager.OnPuzzleStart += RestrictInput;
+            PuzzleManager.OnPuzzleEnd += UnrestrictInput;
             PlayerControls.Enable();
         }
 
         private void OnDisable()
         {
+            PuzzleManager.OnPuzzleStart -= RestrictInput;
+            PuzzleManager.OnPuzzleEnd -= UnrestrictInput;
             PlayerControls.Disable();
         }
         private void Start()
@@ -47,6 +51,35 @@ namespace ACoolTeam
         #endregion
 
         #region Main Methods
+
+        private void RestrictInput()
+        {
+            PlayerControls.Hotbar.ScrollY.performed -= OnScroll;
+            PlayerControls.Hotbar._1.started -= OnScroll;
+            PlayerControls.Hotbar._2.started -= OnScroll;
+            PlayerControls.Hotbar._3.started -= OnScroll;
+            PlayerControls.Hotbar._4.started -= OnScroll;
+            PlayerControls.Hotbar._5.started -= OnScroll;
+            PlayerControls.Hotbar._6.started -= OnScroll;
+            PlayerControls.Hotbar._7.started -= OnScroll;
+            PlayerControls.Hotbar._8.started -= OnScroll;
+            PlayerControls.Hotbar._9.started -= OnScroll;
+        }
+
+        private void UnrestrictInput()
+        {
+            PlayerControls.Hotbar.ScrollY.performed += OnScroll;
+            PlayerControls.Hotbar._1.started += OnScroll;
+            PlayerControls.Hotbar._2.started += OnScroll;
+            PlayerControls.Hotbar._3.started += OnScroll;
+            PlayerControls.Hotbar._4.started += OnScroll;
+            PlayerControls.Hotbar._5.started += OnScroll;
+            PlayerControls.Hotbar._6.started += OnScroll;
+            PlayerControls.Hotbar._7.started += OnScroll;
+            PlayerControls.Hotbar._8.started += OnScroll;
+            PlayerControls.Hotbar._9.started += OnScroll;
+        }
+
         private void OnScroll(InputAction.CallbackContext context)
         {
             if (context.action.name.StartsWith("ScrollY"))
