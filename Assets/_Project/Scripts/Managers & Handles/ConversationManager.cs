@@ -23,6 +23,8 @@ namespace ACoolTeam
         private bool _isTalking = false;
         private PlayerInput _playerInput;
         private bool _enterPressed;
+        private GameObject _conversationStarter;
+        private bool _isTyping = false;
 
 
         private void Awake()
@@ -57,18 +59,18 @@ namespace ACoolTeam
             _playerInput.Disable();
         }
 
-        public void StartConversation(ConversationObject currentConversation)
+        public void StartConversation(ConversationObject currentConversation, bool isTriggered, GameObject talker)
         {
             if (!_isTalking)
             {
                 _isTalking = true;
                 _dialogueDisplay.SetActive(true);
 
-                StartCoroutine(ConversationCo(currentConversation));
+                StartCoroutine(ConversationCo(currentConversation, isTriggered, talker));
             }
         }
 
-        private IEnumerator ConversationCo(ConversationObject currentConversation)
+        private IEnumerator ConversationCo(ConversationObject currentConversation, bool isTriggered, GameObject talker)
         {
             foreach (ConversationEntryObject entry in currentConversation.ConversationLines)
             {
@@ -78,6 +80,10 @@ namespace ACoolTeam
 
             _dialogueDisplay.SetActive(false);
             _isTalking = false;
+            if (isTriggered)
+            {
+                talker.SetActive(false);
+            }
         }
 
         private void PopulateCurrentEntry(ConversationEntryObject entry)
@@ -91,7 +97,7 @@ namespace ACoolTeam
         {
             SoundManager.Instance.PlaySFX(_textSound, 0.2f);
             yield return new WaitForSeconds(0.5f);
-            while (!_enterPressed)
+            while (!_enterPressed || _isTyping) //there was a glitch where if you pressed enter too soon, it'd skip ahead and intertwine both lines of text LOL. This fixes it.
             {
                 yield return null;
             }
@@ -99,6 +105,7 @@ namespace ACoolTeam
 
         private IEnumerator ScrollText(string text)
         {
+            _isTyping = true;
             _dialogueText.text = String.Empty;
             if (text.Length > _charLimit)
             {
@@ -109,6 +116,7 @@ namespace ACoolTeam
                 _dialogueText.text += chr;
                 yield return new WaitForSeconds(0.025f);
             }
+            _isTyping = false;
         }
     }
 }

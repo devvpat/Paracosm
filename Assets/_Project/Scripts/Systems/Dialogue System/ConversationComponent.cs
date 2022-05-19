@@ -16,7 +16,7 @@ namespace ACoolTeam
             {
                 if (eventData.button == PointerEventData.InputButton.Right)
                 {
-                    ConversationManager.Instance.StartConversation(_thisConversation);
+                    ConversationManager.Instance.StartConversation(_thisConversation, false, gameObject);
                 }
             }
         }
@@ -24,7 +24,7 @@ namespace ACoolTeam
         {
             if (_triggeredOnEntry)
             {
-                ConversationManager.Instance.StartConversation(_thisConversation);
+                ConversationManager.Instance.StartConversation(_thisConversation, true, gameObject);
             }
         }
     }
