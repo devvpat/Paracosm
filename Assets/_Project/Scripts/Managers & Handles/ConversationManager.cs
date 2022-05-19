@@ -18,6 +18,7 @@ namespace ACoolTeam
         [SerializeField] private Image _dialogueBox;
         [SerializeField] private GameObject _dialogueDisplay;
         [SerializeField] private AudioClip _textSound;
+        [SerializeField] private int _charLimit;
 
         private bool _isTalking = false;
         private PlayerInput _playerInput;
@@ -99,6 +100,10 @@ namespace ACoolTeam
         private IEnumerator ScrollText(string text)
         {
             _dialogueText.text = String.Empty;
+            if (text.Length > _charLimit)
+            {
+                text = text.Substring(0, _charLimit); //if the text goes over, it just gets cut off.
+            }
             foreach (char chr in text)
             {
                 _dialogueText.text += chr;
