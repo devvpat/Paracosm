@@ -37,9 +37,20 @@ namespace ACoolTeam
             if (_inRange && !PuzzleManager.PuzzlePlaying && !_puzzleStarted)
             {
                 _puzzleStarted = true;
-                ConversationManager.Instance.StartConversation(_characterReaction, false, gameObject);
-                PuzzleManager.Instance.StartPuzzle(_puzzleGameObject, false);
+                StartCoroutine(Ritual());
             }
+        }
+
+        private IEnumerator Ritual()
+        {
+            ConversationManager.Instance.StartConversation(_characterReaction, false, gameObject);
+            
+            while (ConversationManager.Instance.IsTalking() == true)
+            {
+                //Debug.Log(ConversationManager.Instance.IsTalking());
+                yield return null;
+            }
+            PuzzleManager.Instance.StartPuzzle(_puzzleGameObject, false);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

@@ -24,7 +24,10 @@ namespace ACoolTeam
         {
             if (_triggeredOnEntry)
             {
-                ConversationManager.Instance.StartConversation(_thisConversation, true, gameObject);
+                if (collision.CompareTag("Player"))
+                {
+                    ConversationManager.Instance.StartConversation(_thisConversation, true, gameObject);
+                }
             }
         }
     }
