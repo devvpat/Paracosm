@@ -16,14 +16,15 @@ MonoBehaviour:
   - Lines: Hmm, there's an old letter in here...
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
-  - Lines: ... something about a ritual? What the hecl? A ritual? What is this, witchcraft?
-      What kind of superstitious crap is my uncle  doing?
+  - Lines: ... something about a ritual? What the heck? A ritual?
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
-  - Lines: What kind of superstitious crap is my uncle  doing?
+  - Lines: What kind of superstitious crap was my uncle doing?
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
-  - Lines: ' Well, if there is a ritual book in the next room, I should sell it on
-      eBay and scam some idiot there.'
+  - Lines: ' Well, if there is a ritual book in the next room,'
+    CharName: 
+    DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
+  - Lines: I should sell it on eBay and scam some idiot there.
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}

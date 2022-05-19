@@ -8,6 +8,7 @@ namespace ACoolTeam
     public class BeginRitual : MonoBehaviour
     {
         [SerializeField] private GameObject _puzzleGameObject;
+        [SerializeField] private ConversationObject _characterReaction; //player reaction to ritual
 
         private PlayerInput _playerInput;
         private int _gameProgress = 3;
@@ -36,6 +37,7 @@ namespace ACoolTeam
             if (_inRange && !PuzzleManager.PuzzlePlaying && !_puzzleStarted)
             {
                 _puzzleStarted = true;
+                ConversationManager.Instance.StartConversation(_characterReaction, false, gameObject);
                 PuzzleManager.Instance.StartPuzzle(_puzzleGameObject, false);
             }
         }
