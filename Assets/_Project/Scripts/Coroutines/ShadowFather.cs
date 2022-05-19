@@ -7,12 +7,18 @@ namespace ACoolTeam
 {
     public class ShadowFather : MonoBehaviour
     {
+        public delegate void StartAction();
+        public static event StartAction OnStart;
+        public delegate void EndAction();
+        public static event EndAction OnIntroEnd;
+
         [SerializeField] private GameObject _fatherObject;
         [SerializeField] private GameObject _basementDoorObject;
+        [Space(10)]
         [SerializeField] private ConversationObject _dialogueMonster;
         [SerializeField] private ConversationObject _dialogue1;
         [SerializeField] private ConversationObject _dialogue2;
-
+        [Space(10)]
         [SerializeField] private AudioClip _monsterSound;
         [SerializeField] private AudioClip _monsterWave;
         [SerializeField] private AudioClip _doorBonk;
@@ -21,6 +27,7 @@ namespace ACoolTeam
         private float _animWaitOne = 2f; //monster appear
         private float _animWaitTwo = 4f; //monster disappear
         private float _animWaitThree = 2.5f; //door
+        private float _animWaitFour = 0.5f; //door
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -33,6 +40,8 @@ namespace ACoolTeam
         private IEnumerator FatherAppear()
         {
             //father appears, father dialogue
+            yield return new WaitForSeconds(_animWaitFour);
+            OnStart?.Invoke();
             SoundManager.Instance.PlaySFX(_monsterSound, 0.2f); //add scary sound here
             _fatherObject.GetComponent<Animator>().SetInteger("Stage", 1);
             yield return new WaitForSeconds(_animWaitOne);
@@ -71,7 +80,7 @@ namespace ACoolTeam
             {
                 yield return null;
             }
-
+            OnIntroEnd?.Invoke();
             gameObject.SetActive(false); //deactivates self once done
         }
     }

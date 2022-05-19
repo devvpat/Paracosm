@@ -32,6 +32,7 @@ namespace ACoolTeam
         private bool _isMovementPressed;
         private bool _isActionPressed;
         private bool _isGrounded;
+        private bool _isInDialogue;
 
         // jump vars
         [SerializeField] private float _jumpVelocity;
@@ -71,6 +72,7 @@ namespace ACoolTeam
         public bool IsActionPressed { get { return _isActionPressed; } }
         public bool IsJumpPressed { get { return _isJumpPressed; } }
         public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
+        public bool IsInDialogue { get { return _isInDialogue; } set { _isInDialogue = value; } }
         public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
         public bool CanJump { get { return _canJump; } set { _canJump = value; } }
         public bool IsCrawling { get { return _isCrawling; } }
@@ -109,6 +111,10 @@ namespace ACoolTeam
         {
             PuzzleManager.OnPuzzleStart += RestrictMovement;
             PuzzleManager.OnPuzzleEnd += UnrestrictMovement;
+            IntroductoryText.OnStart += RestrictMovement;
+            IntroductoryText.OnIntroEnd += UnrestrictMovement;
+            ShadowFather.OnStart += RestrictMovement;
+            ShadowFather.OnIntroEnd += UnrestrictMovement;
             _playerInput.Enable();
         }
 
@@ -116,6 +122,10 @@ namespace ACoolTeam
         {
             PuzzleManager.OnPuzzleStart -= RestrictMovement;
             PuzzleManager.OnPuzzleEnd -= UnrestrictMovement;
+            IntroductoryText.OnStart -= RestrictMovement;
+            IntroductoryText.OnIntroEnd -= UnrestrictMovement;
+            ShadowFather.OnStart -= RestrictMovement;
+            ShadowFather.OnIntroEnd -= UnrestrictMovement;
             _playerInput.Disable();
         }
 
@@ -162,6 +172,10 @@ namespace ACoolTeam
 
         private void RestrictMovement()
         {
+            _speed = 0f;
+            _currentMovementInput = Vector2.zero;
+            _isMovementPressed = false;
+            _isInDialogue = true;
             _playerInput.Player.Move.started -= OnMoveInput;
             _playerInput.Player.Move.performed -= OnMoveInput;
             _playerInput.Player.Move.canceled -= OnMoveInput;
@@ -172,6 +186,8 @@ namespace ACoolTeam
 
         private void UnrestrictMovement()
         {
+            _speed = _baseSpeed;
+            _isInDialogue = false;
             _playerInput.Player.Move.started += OnMoveInput;
             _playerInput.Player.Move.performed += OnMoveInput;
             _playerInput.Player.Move.canceled += OnMoveInput;

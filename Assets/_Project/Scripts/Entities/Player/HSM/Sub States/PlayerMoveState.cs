@@ -26,7 +26,7 @@ namespace ACoolTeam
 
         public override void CheckSwitchStates()
         {
-            if (!Ctx.IsMovementPressed)
+            if (!Ctx.IsMovementPressed || Ctx.IsInDialogue)
                 SwitchState(Factory.Idle());
         }
 
