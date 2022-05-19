@@ -13,6 +13,7 @@ namespace ACoolTeam
 
         [SerializeField] private List<ItemObject> _chestItems;    //put chest items here
         [SerializeField] private InventoryObject _playerInv;    //link player inventory
+        [SerializeField] private ConversationObject _characterReaction; //player reaction to contents
 
         private PlayerInput _playerInput;
         private bool _playerInBounds;
@@ -43,6 +44,7 @@ namespace ACoolTeam
                     _playerInv.AddItem(new Item(item), 1);
                 }
                 OnItemPickUp?.Invoke();
+                ConversationManager.Instance.StartConversation(_characterReaction, false, gameObject);
                 Destroy(gameObject);
             }
         }
