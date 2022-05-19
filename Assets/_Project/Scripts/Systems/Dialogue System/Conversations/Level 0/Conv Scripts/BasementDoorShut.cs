@@ -35,18 +35,18 @@ namespace ACoolTeam
             //door closes
             //yield return new WaitForSeconds(0.5f);
             OnStart?.Invoke();
+
             //door closes
-            SoundManager.Instance.PlaySFX(_doorClose, 0.2f);
-            yield return new WaitForSeconds(0.3f);
-            SoundManager.Instance.PlaySFX(_doorBonk, 0.2f);
-            
-            
-            _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 1);
-            yield return new WaitForSeconds(_animWait);
-            _outsideObject.SetActive(false);
             _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 0);
+            _basementDoorObject.GetComponent<Animator>().SetTrigger("CloseDoor");
+            _outsideObject.SetActive(false);
+            _basementDoorObject.GetComponent<Animator>().ResetTrigger("CloseDoor");
+            SoundManager.Instance.PlaySFX(_doorClose, 0.2f);
+            SoundManager.Instance.PlaySFX(_doorBonk, 1.5f);
+
 
             //post-event dialogue
+            yield return new WaitForSeconds(_animWait);
             ConversationManager.Instance.StartConversation(_characterReaction, false, gameObject);
             while (ConversationManager.Instance.IsTalking() == true)
             {

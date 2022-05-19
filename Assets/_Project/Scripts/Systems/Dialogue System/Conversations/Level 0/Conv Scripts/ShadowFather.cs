@@ -67,9 +67,9 @@ namespace ACoolTeam
             _fatherObject.GetComponent<Animator>().SetInteger("Stage", 4);
 
             //door opens
-            SoundManager.Instance.PlaySFX(_doorBonk, 0.2f);
+            SoundManager.Instance.PlaySFX(_doorBonk, 0.5f);
             yield return new WaitForSeconds(0.3f);
-            SoundManager.Instance.PlaySFX(_doorOpen, 0.2f);
+            SoundManager.Instance.PlaySFX(_doorOpen, 0.5f);
             _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 1);
             yield return new WaitForSeconds(_animWaitThree);
             _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 2);
