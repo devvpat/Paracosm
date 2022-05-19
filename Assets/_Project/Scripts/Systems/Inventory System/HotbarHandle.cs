@@ -87,15 +87,15 @@ namespace ACoolTeam
                 var scrollNum = context.ReadValue<float>();
                 if (scrollNum < 0)
                 {
-                    if (SelectIndex >= transform.childCount)
+                    if (SelectIndex > transform.childCount - 1)
                         SelectIndex = 0;
                     else
                         SelectIndex++;
                 }
                 else if (scrollNum > 0)
                 {
-                    if (SelectIndex <= 0)
-                        SelectIndex = transform.childCount;
+                    if (SelectIndex < 0)
+                        SelectIndex = transform.childCount - 1;
                     else
                         SelectIndex--;
                 }
@@ -121,6 +121,10 @@ namespace ACoolTeam
                 i++;
             }
             //DisplayHand.RefreshHandSprite(_playerInventory);
+            if (SelectIndex == -1)
+                SelectIndex = 8;
+            else if (SelectIndex == 9)
+                SelectIndex = 0;
             SelectedSlot = _playerInventory.Container.Slots[SelectIndex];
             _selectItem.text = _playerInventory.Container.Slots[SelectIndex].Name;
         }
