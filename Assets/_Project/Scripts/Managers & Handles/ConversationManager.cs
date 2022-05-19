@@ -10,11 +10,6 @@ namespace ACoolTeam
 {
     public class ConversationManager : MonoBehaviour
     {
-        public delegate void StartAction();
-        public static event StartAction OnStart;
-        public delegate void EndAction();
-        public static event EndAction OnIntroEnd;
-
         public static ConversationManager Instance { get; private set; }
 
         [SerializeField] private TextMeshProUGUI _dialogueText;
@@ -77,7 +72,6 @@ namespace ACoolTeam
 
         private IEnumerator ConversationCo(ConversationObject currentConversation, bool isTriggered, GameObject talker)
         {
-            OnStart?.Invoke();
             foreach (ConversationEntryObject entry in currentConversation.ConversationLines)
             {
                 PopulateCurrentEntry(entry);
@@ -90,7 +84,6 @@ namespace ACoolTeam
             {
                 talker.SetActive(false);
             }
-            OnIntroEnd?.Invoke();
         }
 
         private void PopulateCurrentEntry(ConversationEntryObject entry)

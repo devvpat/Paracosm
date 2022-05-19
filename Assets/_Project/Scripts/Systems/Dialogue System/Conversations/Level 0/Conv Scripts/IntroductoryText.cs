@@ -7,6 +7,10 @@ namespace ACoolTeam
 {
     public class IntroductoryText : MonoBehaviour
     {
+        public delegate void StartAction();
+        public static event StartAction OnStart;
+        public delegate void EndAction();
+        public static event EndAction OnIntroEnd;
 
         [SerializeField] private GameObject _inventoryObject;
         [SerializeField] private ConversationObject _text;
@@ -16,7 +20,7 @@ namespace ACoolTeam
         void Start()
         {
             _blackBackground.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
-            //OnStart?.Invoke();
+            OnStart?.Invoke();
             StartCoroutine(IntroductionDialogue());
         }
 
@@ -41,6 +45,7 @@ namespace ACoolTeam
             }
             _blackBackground.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
             //Dev code ends here
+            OnIntroEnd?.Invoke();
             gameObject.SetActive(false); //deactivates self when done
         }
     }
