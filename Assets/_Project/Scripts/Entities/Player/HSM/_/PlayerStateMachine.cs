@@ -111,10 +111,9 @@ namespace ACoolTeam
         {
             PuzzleManager.OnPuzzleStart += RestrictMovement;
             PuzzleManager.OnPuzzleEnd += UnrestrictMovement;
-            IntroductoryText.OnStart += RestrictMovement;
-            IntroductoryText.OnIntroEnd += UnrestrictMovement;
             ShadowFather.OnStart += RestrictMovement;
-            ShadowFather.OnIntroEnd += UnrestrictMovement;
+            ConversationManager.OnStart += RestrictMovement;
+            ConversationManager.OnIntroEnd += UnrestrictMovement;
             _playerInput.Enable();
         }
 
@@ -122,10 +121,9 @@ namespace ACoolTeam
         {
             PuzzleManager.OnPuzzleStart -= RestrictMovement;
             PuzzleManager.OnPuzzleEnd -= UnrestrictMovement;
-            IntroductoryText.OnStart -= RestrictMovement;
-            IntroductoryText.OnIntroEnd -= UnrestrictMovement;
             ShadowFather.OnStart -= RestrictMovement;
-            ShadowFather.OnIntroEnd -= UnrestrictMovement;
+            ConversationManager.OnStart -= RestrictMovement;
+            ConversationManager.OnIntroEnd -= UnrestrictMovement;
             _playerInput.Disable();
         }
 
