@@ -118,5 +118,10 @@ namespace ACoolTeam
             }
             _isTyping = false;
         }
+
+        public bool IsTalking()
+        {
+            return _isTalking;
+        }
     }
 }
