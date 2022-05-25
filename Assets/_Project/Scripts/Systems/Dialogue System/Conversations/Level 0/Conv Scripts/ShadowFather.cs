@@ -58,6 +58,7 @@ namespace ACoolTeam
                 yield return null;
             }
 
+            OnStart?.Invoke();
             //father waves, disappears
             SoundManager.Instance.PlaySFX(_monsterWave, 0.2f);
             _fatherObject.GetComponent<Animator>().SetInteger("Stage", 3);
