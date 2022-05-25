@@ -24,7 +24,7 @@ namespace ACoolTeam
 
         private float _animWaitOne = 2f; //monster appear
         private float _animWaitTwo = 4f; //monster disappear
-        private float _animWaitThree = 2.5f; //door
+        private float _animWaitThree = 1.5f; //door
         private float _animWaitFour = 0.5f; //door
 
         private void OnTriggerEnter2D(Collider2D collision)

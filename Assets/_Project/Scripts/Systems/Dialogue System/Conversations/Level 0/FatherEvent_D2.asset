@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: FatherEvent_D2
   m_EditorClassIdentifier: 
   ConversationLines:
-  - Lines: It looked familiar... reminds me of someone.
+  - Lines: That shadow looks...
+    CharName: 
+    DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
+  - Lines: ...
+    CharName: 
+    DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
+  - Lines: Dad?
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
   - Lines: "I better check what\u2019s in there."
