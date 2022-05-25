@@ -25,8 +25,10 @@ MonoBehaviour:
   - Lines: Hold D to move the lockpick to the right.
     CharName: 
     DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
-  - Lines: Once you rotate the lockpick to the correct position, the handle view
-      will close,
+  - Lines: Once you rotate the lockpick to the correct position,
+    CharName: 
+    DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
+  - Lines: the handle view will close,
     CharName: 
     DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
   - Lines: and the door will be unlocked.
