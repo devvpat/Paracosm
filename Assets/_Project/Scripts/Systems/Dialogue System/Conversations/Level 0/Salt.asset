@@ -19,7 +19,10 @@ MonoBehaviour:
   - Lines: Did he really believe monsters and rituals exist?
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
-  - Lines: Maybe he disappeared because he went insane and got himself killed somewhere.
+  - Lines: Maybe he disappeared because he went insane,
+    CharName: 
+    DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
+  - Lines: and got himself killed somewhere.
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
   - Lines: I just  need to get out of here.
