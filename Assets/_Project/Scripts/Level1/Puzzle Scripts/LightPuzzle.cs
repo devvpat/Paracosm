@@ -10,6 +10,7 @@ namespace ACoolTeam
         [SerializeField] private GameObject _player;
         [SerializeField] private GameObject _light;
         [SerializeField] private GameObject _chest;
+        [SerializeField] private SM_PlaySound _lightFlickeringSound;
 
         private bool _onRightSide = true;
         private bool _triggerEntered = true;
@@ -45,6 +46,7 @@ namespace ACoolTeam
         private IEnumerator FlickerChest()
         {
             Debug.Log("Flick Co Started");
+            _lightFlickeringSound.PlayClip(SM_PlaySound.SoundType.SFX);
             ToggleChest(false);
             yield return new WaitForSeconds(0.15f);
             ToggleChest(true);

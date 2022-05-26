@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace ACoolTeam
 {
+    [RequireComponent(typeof(SM_PlaySound))]
     public class LeverAI : MonoBehaviour
     {
         public delegate void LeverActivateAction();
@@ -40,6 +41,7 @@ namespace ACoolTeam
                 OnLeverActivate?.Invoke();
                 _spriteRenderer.sprite = _activedLever;
                 _isActive = true;
+                GetComponent<SM_PlaySound>().PlayClip(SM_PlaySound.SoundType.SFX);
             }
         }
 

@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace ACoolTeam
 {
+    [RequireComponent(typeof(SM_PlaySound))]
     public class ChestBehavior : MonoBehaviour
     {
         public delegate void PickUpAction();
@@ -40,6 +41,7 @@ namespace ACoolTeam
             if (_playerInBounds && CanInteract)
             {
                 Debug.Log("Interacted");
+                GetComponent<SM_PlaySound>().PlayClip(SM_PlaySound.SoundType.SFX);
                 foreach (ItemObject item in _chestItems)
                 {
                     _playerInv.AddItem(new Item(item), 1);
