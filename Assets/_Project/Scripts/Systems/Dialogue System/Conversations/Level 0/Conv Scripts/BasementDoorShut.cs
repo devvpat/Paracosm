@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 //By Alaina Klaes, 5-18-2022
 
 namespace ACoolTeam
@@ -12,10 +13,15 @@ namespace ACoolTeam
         [SerializeField] private GameObject _room2Object;
         [SerializeField] private GameObject _basementDoorObject;
         [Space(10)]
-        [SerializeField] private ConversationObject _characterReaction;
-        [Space(10)]
         [SerializeField] private AudioClip _doorBonk;
         [SerializeField] private AudioClip _doorClose;
+        [Space(10)]
+        [SerializeField] private ConversationObject _characterReaction;
+        [Space(10)]
+        [SerializeField] private CinemachineVirtualCamera _camera;
+
+        private float _intervalTimer = 0.045f;
+        private int _counter = 20;
 
         private float _animWait = 1.5f; //door
 
@@ -23,6 +29,7 @@ namespace ACoolTeam
         {
             //if (collision.tag == "Player")
 
+            StartCoroutine(ZoomInCamera());
             StartCoroutine(BasementShut());
 
         }
@@ -50,6 +57,15 @@ namespace ACoolTeam
                 yield return null;
             }
             gameObject.SetActive(false); //deactivates self once done
+        }
+
+        private IEnumerator ZoomInCamera()
+        {
+            for (int i = 0; i < _counter; i++)
+            {
+                _camera.m_Lens.OrthographicSize -= 0.1f;
+                yield return new WaitForSeconds(_intervalTimer);
+            }
         }
     }
 }
