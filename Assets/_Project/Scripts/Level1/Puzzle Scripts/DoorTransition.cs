@@ -6,6 +6,7 @@ namespace ACoolTeam
     public class DoorTransition : MonoBehaviour
     {
         [SerializeField] private GameObject _puzzleGameObject;
+        [SerializeField] private GameObject _room2Object;
 
         private PlayerInput _playerInput;
         private bool _inRange;
@@ -50,6 +51,7 @@ namespace ACoolTeam
                 // we can just keep this for now for the alpha i think unless someone wants to change it.
 
                 HotbarHandle.SelectedSlot = null;
+                _room2Object.SetActive(true);
                 Destroy(gameObject);
             }
         }

@@ -9,6 +9,7 @@ namespace ACoolTeam
     {
 
         [SerializeField] private GameObject _outsideObject;
+        [SerializeField] private GameObject _room2Object;
         [SerializeField] private GameObject _basementDoorObject;
         [Space(10)]
         [SerializeField] private ConversationObject _characterReaction;
@@ -35,6 +36,7 @@ namespace ACoolTeam
             _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 0);
             _basementDoorObject.GetComponent<Animator>().SetTrigger("CloseDoor");
             _outsideObject.SetActive(false);
+            _room2Object.SetActive(false);
             _basementDoorObject.GetComponent<Animator>().ResetTrigger("CloseDoor");
             SoundManager.Instance.PlaySFX(_doorClose, 0.2f);
             SoundManager.Instance.PlaySFX(_doorBonk, 1.5f);
