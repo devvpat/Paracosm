@@ -90,7 +90,7 @@ namespace ACoolTeam
             jumpscare2.enabled = true;
             yield return new WaitForSeconds(.15f);
             jumpscare3.enabled = true;
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(2.35f);
             SceneManager.LoadScene("MenuScene");
         }
 

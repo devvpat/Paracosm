@@ -13,6 +13,13 @@ namespace ACoolTeam
         public static event NotSweetSpotAction NotOnSweetSpot;
 
         private bool _onSweetSpot;
+        private float _indicatorSpeed = 1f;
+        private Animator _animator;
+
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         private void OnEnable()
         {
@@ -27,9 +34,18 @@ namespace ACoolTeam
         private void PauseHandle()
         {
             if (_onSweetSpot)
+            {
                 OnSweetSpot?.Invoke();
+                _indicatorSpeed += 0.5f;
+                _animator.SetFloat("animSpeed", _indicatorSpeed);
+            }
             else
+            {
                 NotOnSweetSpot?.Invoke();
+                _indicatorSpeed -= 0.5f;
+                if (_indicatorSpeed <= 1f) _indicatorSpeed = 1f;
+                _animator.SetFloat("animSpeed", _indicatorSpeed);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
