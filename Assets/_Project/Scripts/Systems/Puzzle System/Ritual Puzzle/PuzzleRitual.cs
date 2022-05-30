@@ -13,6 +13,7 @@ namespace ACoolTeam
         public static event PauseIndicatorAction OnPauseIndicator;
         public static int GameProgress = 3;
 
+        [SerializeField] private Image _blackBackground;
         [SerializeField] private Animator _lineIndicatorAnimator;
         [SerializeField] private AnimationClip _indicatorAnimation;
         [SerializeField] private BoxCollider2D _indicatorCollider;
@@ -75,7 +76,8 @@ namespace ACoolTeam
 
         private IEnumerator OnLevelComplete()
         {
-            yield return new WaitForSeconds(1.5f);
+            _blackBackground.enabled = true;
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene("MenuScene");
         }
 
