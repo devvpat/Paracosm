@@ -13,7 +13,7 @@ namespace ACoolTeam
         public static event NotSweetSpotAction NotOnSweetSpot;
 
         private bool _onSweetSpot;
-        private float _indicatorSpeed = 1f;
+        private float _indicatorSpeed = 1.5f;
         private Animator _animator;
 
         private void Awake()
@@ -43,7 +43,7 @@ namespace ACoolTeam
             {
                 NotOnSweetSpot?.Invoke();
                 _indicatorSpeed -= 0.5f;
-                if (_indicatorSpeed <= 1f) _indicatorSpeed = 1f;
+                if (_indicatorSpeed <= 1.25f) _indicatorSpeed = 1.25f;
                 _animator.SetFloat("animSpeed", _indicatorSpeed);
             }
         }

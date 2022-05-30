@@ -11,7 +11,7 @@ namespace ACoolTeam
 
         private Vector3 _tentacleInterval = new Vector3(0, 1f, 0);
         private float _intervalTimer = 0.025f;
-        private int _counter = 100;
+        private int _counter = 150;
 
         private void OnEnable()
         {
@@ -47,7 +47,7 @@ namespace ACoolTeam
 
         private IEnumerator LerpBackwardProgress()
         {
-            for (int i = 0; i < _counter; i++)
+            for (int i = 0; i < _counter - 50; i++)
             {
                 _topPivot.localPosition -= _tentacleInterval;
                 _botPivot.localPosition += _tentacleInterval;
