@@ -37,7 +37,6 @@ namespace ACoolTeam
             if (_inRange && !PuzzleManager.PuzzlePlaying && !_puzzleStarted)
             {
                 _puzzleStarted = true;
-                SoundManager.Instance.StopBGM();    //change to play ritual music, currently just stops
                 StartCoroutine(Ritual());
             }
         }
