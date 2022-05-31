@@ -22,6 +22,9 @@ namespace ACoolTeam
         [SerializeField] private RawImage jumpscare1;
         [SerializeField] private RawImage jumpscare2;
         [SerializeField] private RawImage jumpscare3;
+        [Space(10)]
+        [SerializeField] private SM_PlaySound _ritualBGM;
+        [SerializeField] private SM_PlaySound _jumpscareSFX;
 
 
         private PlayerInput _playerInput;
@@ -57,7 +60,9 @@ namespace ACoolTeam
         {
             Debug.Log("Puzzle started");
             PuzzleManager.PuzzlePlaying = true;
-
+            SoundManager.Instance.StopBGM();
+            _ritualBGM.PlayClip(SM_PlaySound.SoundType.BGM);
+            SoundManager.Instance.Get_BGMSource().loop = true;
         }
 
         public void OnPuzzleEnd()
@@ -81,9 +86,10 @@ namespace ACoolTeam
 
         private IEnumerator OnLevelComplete()
         {
+            SoundManager.Instance.Get_BGMSource().Stop();
             _blackBackground.enabled = true;
             yield return new WaitForSeconds(1.5f);
-            GetComponent<SM_PlaySound>().PlayClip(SM_PlaySound.SoundType.SFX);
+            _jumpscareSFX.PlayClip(SM_PlaySound.SoundType.SFX);
             yield return new WaitForSeconds(.5f);
             jumpscare1.enabled = true;
             yield return new WaitForSeconds(.15f);
