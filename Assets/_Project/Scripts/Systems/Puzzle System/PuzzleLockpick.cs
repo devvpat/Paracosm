@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
@@ -13,15 +14,23 @@ namespace ACoolTeam
         public static event PuzzleCompleteAction OnPuzzleComplete;
 
         [SerializeField] private RectTransform _lockPickTransform;
+        [SerializeField] private TextMeshProUGUI _feedbackText;
+        [SerializeField] private AudioClip _wrongSpot;
+        [SerializeField] private AudioClip _rightSpot;
         [SerializeField] private Animator _lockPickAnimator;
         [SerializeField] private AnimationClip _leftRotateAnim;
         [SerializeField] private AnimationClip _rightRotateAnim;
+        [SerializeField] private AnimationClip _wiggleRotateAnim;
         [SerializeField] private AnimationClip _startAnimation;
         [SerializeField] private float _angle;
 
         private PlayerInput _playerInput;
         private bool _puzzleComplete;
         private float _sweetSpotAngle;
+        private string _closeText1 = "Very Close!";
+        private string _closeText2 = "Nearby";
+        private string _farText1 = "Far Away";
+        private string _farText2 = "Very Far";
 
         private void Awake()
         {
@@ -89,7 +98,12 @@ namespace ACoolTeam
             if (IsBetween(_lockPickTransform.eulerAngles.z, _sweetSpotAngle - _angle, _sweetSpotAngle + _angle))
                 InSweetSpot();
             else
+            {
+                AnimationManager.ChangeAnimState(_lockPickAnimator, _wiggleRotateAnim);
+                _feedbackText.text = _closeText1;
+                yield return new WaitForSeconds(1f);
                 NotInSweetSpot();
+            }
             
             _lockPickAnimator.enabled = true;
             AnimationManager.ChangeAnimState(_lockPickAnimator, _startAnimation);
@@ -106,6 +120,7 @@ namespace ACoolTeam
 
         private void NotInSweetSpot()
         {
+            
             Debug.Log("NOT in Sweet Spot.. try again");
             // ADD: implement sounds, notifications, or whatever to tell the player how close they are to the sweet spot.
         }
