@@ -3318,7 +3318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408082237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.87, y: 1.9, z: -10}
+  m_LocalPosition: {x: 62, y: -2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 153826311}
@@ -4194,7 +4194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.87, y: 1.9, z: -10}
+  m_LocalPosition: {x: 62, y: -2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 630792083}
@@ -7184,14 +7184,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1887381248}
     m_Modifications:
-    - target: {fileID: 4644052734415869128, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: _ritualBGM
-      value: 
-      objectReference: {fileID: 968349695}
-    - target: {fileID: 4644052734415869128, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: _jumpscareSFX
-      value: 
-      objectReference: {fileID: 968349696}
     - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7287,41 +7279,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
   m_PrefabInstance: {fileID: 968349692}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &968349694 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4644052734415869130, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-  m_PrefabInstance: {fileID: 968349692}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &968349695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968349694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42754df516ddb8243b1ba46aa80f0e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: 4ea3ee2280a38bf4a9e80fa73cba36f0, type: 3}
-  _volume: 0.8
-  _soundType: 1
-  _fadeBGM: 0
-  _fadeOutTime: 0
-  _fadeInTime: 0
-  _checkFor: 2
---- !u!114 &968349696 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 233265650, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-  m_PrefabInstance: {fileID: 968349692}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968349694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42754df516ddb8243b1ba46aa80f0e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &990463080
 GameObject:
   m_ObjectHideFlags: 0
@@ -12029,7 +11986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542555479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.87, y: -0.1, z: 0}
+  m_LocalPosition: {x: 62, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 286164614}

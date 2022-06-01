@@ -23,7 +23,7 @@ namespace ACoolTeam
         [SerializeField] private RawImage jumpscare2;
         [SerializeField] private RawImage jumpscare3;
         [Space(10)]
-        [SerializeField] private SM_PlaySound _ritualBGM;
+        [SerializeField] private GameObject _ritualBGM;
         [SerializeField] private SM_PlaySound _jumpscareSFX;
 
 
@@ -42,6 +42,7 @@ namespace ACoolTeam
             LineIndicator.OnSweetSpot += CompletedOverlap;
             LineIndicator.NotOnSweetSpot += UncompletedOverlap;
             _playerInput.Enable();
+            StartCoroutine(PlayRitualBGM());
         }
 
         private void OnDisable()
@@ -60,8 +61,13 @@ namespace ACoolTeam
         {
             Debug.Log("Puzzle started");
             PuzzleManager.PuzzlePlaying = true;
+        }
+
+        private IEnumerator PlayRitualBGM()
+        {
+            yield return null;
             SoundManager.Instance.StopBGM();
-            _ritualBGM.PlayClip(SM_PlaySound.SoundType.BGM);
+            _ritualBGM.GetComponent<SM_PlaySound>().PlayClip(SM_PlaySound.SoundType.BGM);
             SoundManager.Instance.Get_BGMSource().loop = true;
         }
 
