@@ -20,10 +20,13 @@ namespace ACoolTeam
         private IEnumerator Jumpscare()
         {
             //triggers short jumpscare, with some audio
+            
+            SoundManager.Instance.PlaySFX(_scareSound, 0.5f);
+            //yield return new WaitForSeconds(2f);
             _jumpscareObject.GetComponent<Animator>().SetBool("ScareNow", true);
             yield return new WaitForSeconds(0.1f);
-            SoundManager.Instance.PlaySFX(_scareSound, 0.5f);
             _jumpscareObject.GetComponent<Animator>().SetBool("ScareNow", false);
+            yield return new WaitForSeconds(0.5f);
             gameObject.SetActive(false); //deactivates self once done
         }
     }
