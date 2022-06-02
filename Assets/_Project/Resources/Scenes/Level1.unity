@@ -3326,7 +3326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408082237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.47, y: -6.2700005, z: -10}
+  m_LocalPosition: {x: -50.37, y: 1.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 153826311}
@@ -4202,7 +4202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.47, y: -6.2700005, z: -10}
+  m_LocalPosition: {x: -50.37, y: 1.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 630792083}
@@ -11998,7 +11998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542555479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.47, y: -8.27, z: 0}
+  m_LocalPosition: {x: -50.37, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 286164614}
@@ -14900,7 +14900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 100c1fff19064634cb7b28a0fccb5e59, type: 3}
-  _volume: 0.5
+  _volume: 0.75
   _soundType: 1
   _fadeBGM: 0
   _fadeOutTime: 0
