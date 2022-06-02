@@ -28,8 +28,8 @@ namespace ACoolTeam
         private bool _puzzleComplete;
         private float _sweetSpotAngle;
         private string _closeText1 = "Very Close!";
-        private string _closeText2 = "Nearby";
-        private string _farText1 = "Far Away";
+        private string _closeText2 = "Close";
+        private string _farText1 = "Far";
         private string _farText2 = "Very Far";
 
         private void Awake()
@@ -48,6 +48,7 @@ namespace ACoolTeam
         private void OnEnable()
         {
             _playerInput.Enable();
+            _feedbackText.text = "";
         }
 
         private void OnDisable()
@@ -96,12 +97,18 @@ namespace ACoolTeam
             yield return new WaitForSeconds(1f);
 
             if (IsBetween(_lockPickTransform.eulerAngles.z, _sweetSpotAngle - _angle, _sweetSpotAngle + _angle))
+            {
+                SoundManager.Instance.PlaySFX(_rightSpot, 0.2f);
+                yield return new WaitForSeconds(0.5f);
                 InSweetSpot();
+            }
             else
             {
-                AnimationManager.ChangeAnimState(_lockPickAnimator, _wiggleRotateAnim);
-                _feedbackText.text = _closeText1;
-                yield return new WaitForSeconds(1f);
+                //_lockPickTransform.eulerAngles.z += 5;
+                //AnimationManager.ChangeAnimState(_lockPickAnimator, _wiggleRotateAnim);
+                //_feedbackText.text = _closeText1;
+                //yield return new WaitForSeconds(1f);
+                SoundManager.Instance.PlaySFX(_wrongSpot, 0.2f);
                 NotInSweetSpot();
             }
             
@@ -120,7 +127,23 @@ namespace ACoolTeam
 
         private void NotInSweetSpot()
         {
-            
+            float distFromSpot = Mathf.Abs(_sweetSpotAngle - _lockPickTransform.eulerAngles.z);
+            if (distFromSpot <= 60 || distFromSpot >= 300)
+            {
+                _feedbackText.text = _closeText1;
+            }
+            else if (distFromSpot <= 90 || distFromSpot >= 270)
+            {
+                _feedbackText.text = _closeText2;
+            }
+            else if (distFromSpot <= 120 || distFromSpot >= 240)
+            {
+                _feedbackText.text = _farText1;
+            }
+            else if (distFromSpot <= 180 || distFromSpot >= 180)
+            {
+                _feedbackText.text = _farText2;
+            }
             Debug.Log("NOT in Sweet Spot.. try again");
             // ADD: implement sounds, notifications, or whatever to tell the player how close they are to the sweet spot.
         }
