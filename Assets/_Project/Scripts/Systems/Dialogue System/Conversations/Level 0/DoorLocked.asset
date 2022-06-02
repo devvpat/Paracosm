@@ -16,7 +16,7 @@ MonoBehaviour:
   - Lines: "Great... the door\u2019s locked."
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
-  - Lines: Maybe I can [select] and use the lockpick that I got from the chest.
+  - Lines: Maybe I can [select] and use the lockpick I got from the chest.
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
   - Lines: Hold A to move the lockpick to the left.
@@ -28,9 +28,6 @@ MonoBehaviour:
   - Lines: Once you rotate the lockpick to the correct position,
     CharName: 
     DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
-  - Lines: the handle view will close,
-    CharName: 
-    DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
-  - Lines: and the door will be unlocked.
+  - Lines: the handle view will close, and the door will be unlocked.
     CharName: 
     DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
