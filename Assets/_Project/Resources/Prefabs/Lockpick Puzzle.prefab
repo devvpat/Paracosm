@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6659396149303633376
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lockPickTransform: {fileID: 6659396150118764602}
   _feedbackText: {fileID: 6549513224450202595}
-  _wrongSpot: {fileID: 8300000, guid: 1005a6497554b3445974aacec51cb8c6, type: 3}
-  _rightSpot: {fileID: 8300000, guid: d248677e87598584791e68356103572b, type: 3}
+  _wrongSpot: {fileID: 8300000, guid: a8efe7304b7d2204db324dd0a2995f3e, type: 3}
+  _rightSpot: {fileID: 8300000, guid: ba274fbdd3811c64cbd7f8b6eaf2cdb1, type: 3}
   _lockPickAnimator: {fileID: 6659396150118764583}
   _leftRotateAnim: {fileID: 7400000, guid: 54c0bd618eeba5a4c82438dacc9d78de, type: 2}
   _rightRotateAnim: {fileID: 7400000, guid: 3d6fd12ec50601b428eafdb029eb56d1, type: 2}

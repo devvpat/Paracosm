@@ -16,16 +16,3 @@ MonoBehaviour:
   - Lines: RITUAL.... BEGIN!!!
     CharName: 
     DisplayPic: {fileID: 21300000, guid: 696bda31319e88d4d9a5586ce3147884, type: 3}
-  - Lines: Press [spacebar] when the line hits the mark in the middle.
-    CharName: 
-    DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
-  - Lines: As the ritual is being completed,
-    CharName: 
-    DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
-  - Lines: the difficulty increases and the line moves faster.
-    CharName: 
-    DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
-  - Lines: "Don't miss too many times in a row.. O\u0335\u0301\u0347\u032CR\u0335\u031A\u033C\u032F
-      \u0335\u0340\u0313\u035CE\u0334\u0357\u032D\u035AL\u0338\u030F\u0321S\u0335\u0311\u0327E\u0337\u0313\u0315\u0323\u0328"
-    CharName: 
-    DisplayPic: {fileID: 21300000, guid: df99b6eb9b9f3af4fb3f2b9a862836f2, type: 3}
