@@ -8,6 +8,8 @@ namespace ACoolTeam
 {
     public class BasementDoorShut : MonoBehaviour
     {
+        public delegate void StartAction();
+        public static event StartAction OnStart;
 
         [SerializeField] private GameObject _outsideObject;
         [SerializeField] private GameObject _room2Object;
@@ -39,6 +41,7 @@ namespace ACoolTeam
             //door closes
             //yield return new WaitForSeconds(0.5f);
 
+            OnStart?.Invoke();
             //door closes
             _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 0);
             _basementDoorObject.GetComponent<Animator>().SetTrigger("CloseDoor");

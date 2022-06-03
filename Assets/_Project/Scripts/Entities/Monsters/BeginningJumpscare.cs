@@ -21,7 +21,7 @@ namespace ACoolTeam
         {
             //triggers short jumpscare, with some audio
             
-            SoundManager.Instance.PlaySFX(_scareSound, 0.5f);
+            SoundManager.Instance.PlaySFX(_scareSound, 2f);
             //yield return new WaitForSeconds(2f);
             _jumpscareObject.GetComponent<Animator>().SetBool("ScareNow", true);
             yield return new WaitForSeconds(0.1f);
