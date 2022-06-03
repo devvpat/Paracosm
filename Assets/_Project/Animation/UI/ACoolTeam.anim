@@ -41,25 +41,25 @@ AnimationClip:
       value: {fileID: -8530540152530365095, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
     - time: 0.56666666
       value: {fileID: 3450815542273834063, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 0.8833333
+    - time: 1.0666667
       value: {fileID: 8614154534473658586, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 0.93333334
+    - time: 1.1333333
       value: {fileID: -7343412219036959846, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 1
+    - time: 1.2
       value: {fileID: -8572485197183572187, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 1.05
+    - time: 1.2666667
       value: {fileID: 4004341212204742441, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 1.1
+    - time: 1.3333334
       value: {fileID: -4127126526634567292, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 1.15
+    - time: 1.3833333
       value: {fileID: 8424248032327774043, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 1.9166666
-      value: {fileID: 1325729300716633326, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 1.9666667
-      value: {fileID: 7434169854691925218, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
     - time: 2.0333333
+      value: {fileID: 1325729300716633326, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
+    - time: 2.1
+      value: {fileID: 7434169854691925218, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
+    - time: 2.1666667
       value: {fileID: 1475865048175114029, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
-    - time: 2.0833333
+    - time: 2.2333333
       value: {fileID: -4639726630136895909, guid: d4765e4dd49af8b499d98b9e44baeaf3, type: 3}
     attribute: m_Sprite
     path: 
@@ -106,7 +106,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.1
+    m_StopTime: 2.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
