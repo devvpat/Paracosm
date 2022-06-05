@@ -612,7 +612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Object, animation, level design, menu, UI
+  m_text: Game Item art, animation, level design, menu design, UI
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
   m_sharedMaterial: {fileID: 6041249204422814400, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
@@ -1907,7 +1907,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.25
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -8800,10 +8800,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sound Research/Implementation, 2D Light, Ritual Puzzle, Door transitions,
+  m_text: 'Sound Research/Implementation, 2D Lighting, Ritual Puzzle, Door transitions,
 
     chest
-    intractability'
+    Interactions'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
   m_sharedMaterial: {fileID: 6041249204422814400, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
@@ -9009,7 +9009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu BGM, ritual music, Sound effect
+  m_text: Menu Music, ritual music, Sound effects
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
   m_sharedMaterial: {fileID: 6041249204422814400, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
@@ -9371,7 +9371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1761292960
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10177,7 +10177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level Design, Game Items
+  m_text: Level Design, Game Item Art
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
   m_sharedMaterial: {fileID: 6041249204422814400, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
