@@ -98,7 +98,7 @@ namespace ACoolTeam
 
             if (IsBetween(_lockPickTransform.eulerAngles.z, _sweetSpotAngle - _angle, _sweetSpotAngle + _angle))
             {
-                SoundManager.Instance.PlaySFX(_rightSpot, 0.2f);
+                SoundManager.Instance.PlaySFX(_rightSpot, 1f);
                 yield return new WaitForSeconds(0.5f);
                 InSweetSpot();
             }
@@ -108,7 +108,7 @@ namespace ACoolTeam
                 //AnimationManager.ChangeAnimState(_lockPickAnimator, _wiggleRotateAnim);
                 //_feedbackText.text = _closeText1;
                 //yield return new WaitForSeconds(1f);
-                SoundManager.Instance.PlaySFX(_wrongSpot, 0.2f);
+                SoundManager.Instance.PlaySFX(_wrongSpot, 1f);
                 NotInSweetSpot();
             }
             
