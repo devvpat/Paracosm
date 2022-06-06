@@ -388,18 +388,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6659396149303633376, guid: 0659ccb2de72b964c8bd2e59a4ca2efc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659396149303633376, guid: 0659ccb2de72b964c8bd2e59a4ca2efc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659396149303633376, guid: 0659ccb2de72b964c8bd2e59a4ca2efc, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659396149303633376, guid: 0659ccb2de72b964c8bd2e59a4ca2efc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -450,10 +438,6 @@ PrefabInstance:
     - target: {fileID: 6659396149303633377, guid: 0659ccb2de72b964c8bd2e59a4ca2efc, type: 3}
       propertyPath: m_Name
       value: Lockpick Puzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6659396149303633377, guid: 0659ccb2de72b964c8bd2e59a4ca2efc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0659ccb2de72b964c8bd2e59a4ca2efc, type: 3}
@@ -7196,22 +7180,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1887381248}
     m_Modifications:
-    - target: {fileID: 1004331775, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1004331775, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1004331775, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1004331775, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -175.6
-      objectReference: {fileID: 0}
     - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7247,18 +7215,6 @@ PrefabInstance:
     - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7311,10 +7267,6 @@ PrefabInstance:
     - target: {fileID: 4644052734415869130, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
       propertyPath: m_Name
       value: Ritual Puzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 4644052734415869130, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
@@ -14759,7 +14711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1845923156
 SpriteRenderer:
   m_ObjectHideFlags: 0
