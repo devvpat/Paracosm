@@ -47,7 +47,7 @@ namespace ACoolTeam
 
         private IEnumerator LerpBackwardProgress()
         {
-            for (int i = 0; i < _counter - 50; i++)
+            for (int i = 0; i < _counter; i++)
             {
                 _topPivot.localPosition -= _tentacleInterval;
                 _botPivot.localPosition += _tentacleInterval;
