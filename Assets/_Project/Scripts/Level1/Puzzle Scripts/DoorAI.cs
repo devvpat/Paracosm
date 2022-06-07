@@ -29,11 +29,15 @@ namespace ACoolTeam
 
         private void OnEnable()
         {
+            ConversationManager.OnStart += RestrictMovement;
+            ConversationManager.OnIntroEnd += UnrestrictMovement;
             _playerInput.Enable();
         }
 
         private void OnDisable()
         {
+            ConversationManager.OnStart -= RestrictMovement;
+            ConversationManager.OnIntroEnd -= UnrestrictMovement;
             _playerInput.Disable();
         }
         private void Interact(InputAction.CallbackContext obj)
@@ -68,6 +72,16 @@ namespace ACoolTeam
                 _blackBackground.color = new Color(0, 0, 0, 0);
             }
             else _player.transform.position = _link.transform.position - new Vector3(0, _doorSpawnOffset, 0);
+        }
+
+        private void RestrictMovement()
+        {
+            _playerInput.Player.Interact.started -= Interact;
+        }
+
+        private void UnrestrictMovement()
+        {
+            _playerInput.Player.Interact.started += Interact;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

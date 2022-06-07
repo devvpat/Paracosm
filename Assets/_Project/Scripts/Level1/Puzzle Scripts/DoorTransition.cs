@@ -21,12 +21,16 @@ namespace ACoolTeam
 
         private void OnEnable()
         {
+            ConversationManager.OnStart += RestrictMovement;
+            ConversationManager.OnIntroEnd += UnrestrictMovement;
             PuzzleLockpick.OnPuzzleComplete += PuzzleComplete;
             _playerInput.Enable();
         }
 
         private void OnDisable()
         {
+            ConversationManager.OnStart -= RestrictMovement;
+            ConversationManager.OnIntroEnd -= UnrestrictMovement;
             PuzzleLockpick.OnPuzzleComplete -= PuzzleComplete;
             _playerInput.Disable();
         }
@@ -56,6 +60,15 @@ namespace ACoolTeam
             }
         }
 
+        private void RestrictMovement()
+        {
+            _playerInput.Player.Interact.started -= Interact;
+        }
+
+        private void UnrestrictMovement()
+        {
+            _playerInput.Player.Interact.started += Interact;
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))

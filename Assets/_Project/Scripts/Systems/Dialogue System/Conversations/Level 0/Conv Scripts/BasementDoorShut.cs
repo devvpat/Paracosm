@@ -12,6 +12,7 @@ namespace ACoolTeam
         public static event StartAction OnStart;
 
         [SerializeField] private GameObject _outsideObject;
+        [SerializeField] private GameObject _backgroundObject;
         [SerializeField] private GameObject _room2Object;
         [SerializeField] private GameObject _basementDoorObject;
         [Space(10)]
@@ -47,6 +48,7 @@ namespace ACoolTeam
             _basementDoorObject.GetComponent<Animator>().SetTrigger("CloseDoor");
             _outsideObject.SetActive(false);
             _room2Object.SetActive(false);
+            _backgroundObject.SetActive(false);
             _basementDoorObject.GetComponent<Animator>().ResetTrigger("CloseDoor");
             SoundManager.Instance.PlaySFX(_doorClose, 0.2f);
             SoundManager.Instance.PlaySFX(_doorBonk, 1.5f);
