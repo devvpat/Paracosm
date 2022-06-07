@@ -3554,7 +3554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"Night Ambience\" by andersmmg (cc by 4.0)\r\n   https://freesound.org/people/andersmmg/sounds/517471/"
+  m_text: "\"Night Ambience\" by andersmmg\n   https://freesound.org/people/andersmmg/sounds/517471/"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
   m_sharedMaterial: {fileID: 6041249204422814400, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
