@@ -7272,10 +7272,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ritual Puzzle
       objectReference: {fileID: 0}
-    - target: {fileID: 4644052734415869130, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
 --- !u!224 &968349693 stripped
