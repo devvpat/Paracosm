@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpscareObject: {fileID: 324972354}
-  _scareSound: {fileID: 8300000, guid: 658a8cd3f136f6945b8b87cd4a479530, type: 3}
+  _scareSound: {fileID: 8300000, guid: 1361dc3ecd9d83345979d30bd23feeea, type: 3}
 --- !u!1 &338351409
 GameObject:
   m_ObjectHideFlags: 0
@@ -7184,6 +7184,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1887381248}
     m_Modifications:
+    - target: {fileID: 1004331775, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 121.82
+      objectReference: {fileID: 0}
     - target: {fileID: 4644052734415869129, guid: d250e2c6dba11814d874da6e67bc4217, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
