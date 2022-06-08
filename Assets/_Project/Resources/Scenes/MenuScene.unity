@@ -4738,17 +4738,20 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'A, D - Move
 
-    Space - Jump/Interact with Ritual Puzzle
+    Left Ctrl - Crawl
 
-    W - Interact/More
-    Interactivity When Item Selected
+    Space - Jump/Interact with Ritual
+    Puzzle
 
-    1-9 - Select an Inventory Slot
+    W - Interact/More Interactivity When Item Selected
 
-    Enter/Return
-    - Continue Dialogue
+    1-9 - Select
+    an Inventory Slot
 
-    Left Click - Interact with Menus'
+    Enter/Return - Continue Dialogue
+
+    Left Click - Interact
+    with Menus'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}
   m_sharedMaterial: {fileID: 6041249204422814400, guid: f4d0f6ce0dd4ffe42acbbc78aa2e8128, type: 2}

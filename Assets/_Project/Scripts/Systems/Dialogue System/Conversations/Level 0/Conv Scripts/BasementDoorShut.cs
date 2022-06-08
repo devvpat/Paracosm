@@ -12,6 +12,7 @@ namespace ACoolTeam
         public static event StartAction OnStart;
 
         [SerializeField] private GameObject _outsideObject;
+        [SerializeField] private GameObject _ClosedDoorCollider;
         [SerializeField] private GameObject _backgroundObject;
         [SerializeField] private GameObject _room2Object;
         [SerializeField] private GameObject _basementDoorObject;
@@ -61,6 +62,7 @@ namespace ACoolTeam
             {
                 yield return null;
             }
+            _ClosedDoorCollider.SetActive(true);
             gameObject.SetActive(false); //deactivates self once done
         }
 
