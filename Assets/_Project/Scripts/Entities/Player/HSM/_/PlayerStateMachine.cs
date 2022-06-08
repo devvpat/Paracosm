@@ -114,6 +114,8 @@ namespace ACoolTeam
             ShadowFather.OnStart += RestrictMovement;
             ConversationManager.OnStart += RestrictMovement;
             ConversationManager.OnIntroEnd += UnrestrictMovement;
+            LowerRoomJumpscare.OnStart += RestrictMovement;
+            LowerRoomJumpscare.OnIntroEnd += UnrestrictMovement;
             _playerInput.Enable();
         }
 
@@ -124,6 +126,8 @@ namespace ACoolTeam
             ShadowFather.OnStart -= RestrictMovement;
             ConversationManager.OnStart -= RestrictMovement;
             ConversationManager.OnIntroEnd -= UnrestrictMovement;
+            LowerRoomJumpscare.OnStart -= RestrictMovement;
+            LowerRoomJumpscare.OnIntroEnd -= UnrestrictMovement;
             _playerInput.Disable();
         }
 
