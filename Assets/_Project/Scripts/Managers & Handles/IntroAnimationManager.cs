@@ -20,10 +20,10 @@ namespace ACoolTeam
 
         private IEnumerator ACoolTeam()
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.3f);
             _coolTeamObject.SetActive(true);
             _coolTeamObject.GetComponent<Animator>().SetBool("Playing", true);
-            yield return new WaitForSeconds(2.1f); //very carefully timed lol, the exact length of this animation
+            yield return new WaitForSeconds(2.07f); //very carefully timed lol, the exact length of this animation
             _coolTeamObject.GetComponent<Animator>().SetBool("Playing", false);
             _coolTeamObject.SetActive(false);
             StartCoroutine(WarningTextRun());

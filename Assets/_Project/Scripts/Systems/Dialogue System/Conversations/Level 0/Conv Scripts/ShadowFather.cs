@@ -40,9 +40,10 @@ namespace ACoolTeam
             //father appears, father dialogue
             yield return new WaitForSeconds(_animWaitFour);
             OnStart?.Invoke();
-            SoundManager.Instance.PlaySFX(_monsterSound, 0.2f); //add scary sound here
             _fatherObject.GetComponent<Animator>().SetInteger("Stage", 1);
-            yield return new WaitForSeconds(_animWaitOne);
+            yield return new WaitForSeconds(0.5f);
+            SoundManager.Instance.PlaySFX(_monsterSound, 0.5f); //add scary sound here
+            yield return new WaitForSeconds(_animWaitOne-0.5f);
             _fatherObject.GetComponent<Animator>().SetInteger("Stage", 2);
             ConversationManager.Instance.StartConversation(_dialogueMonster, false, gameObject);
             while (ConversationManager.Instance.IsTalking() == true)
@@ -60,15 +61,15 @@ namespace ACoolTeam
 
             OnStart?.Invoke();
             //father waves, disappears
-            SoundManager.Instance.PlaySFX(_monsterWave, 0.2f);
+            SoundManager.Instance.PlaySFX(_monsterWave, 0.4f);
             _fatherObject.GetComponent<Animator>().SetInteger("Stage", 3);
             yield return new WaitForSeconds(_animWaitTwo);
             _fatherObject.GetComponent<Animator>().SetInteger("Stage", 4);
 
             //door opens
-            SoundManager.Instance.PlaySFX(_doorBonk, 0.5f);
+            SoundManager.Instance.PlaySFX(_doorBonk, 0.7f);
             yield return new WaitForSeconds(0.3f);
-            SoundManager.Instance.PlaySFX(_doorOpen, 0.5f);
+            SoundManager.Instance.PlaySFX(_doorOpen, 0.7f);
             _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 1);
             yield return new WaitForSeconds(_animWaitThree);
             _basementDoorObject.GetComponent<Animator>().SetInteger("Stage", 2);
