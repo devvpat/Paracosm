@@ -17,6 +17,7 @@ namespace ACoolTeam
         [SerializeField] private GameObject _taskviewHolder;
         [SerializeField] private GameObject _puzzleHolder;
         [SerializeField] private GameObject _inventorySlots;
+        [SerializeField] private GameObject _selectedSlot;
 
         private void Awake()
         {
@@ -42,6 +43,7 @@ namespace ACoolTeam
                 _taskviewHolder.GetComponent<Image>().enabled = enableUI;
                 _inventorySlots.SetActive(enableUI);
                 _taskviewHolder.SetActive(true);
+                _selectedSlot.SetActive(enableUI);
                 OnPuzzleStart?.Invoke();
 
                 currentPuzzle.OnPuzzleStart();
