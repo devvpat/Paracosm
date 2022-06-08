@@ -9,6 +9,7 @@ namespace ACoolTeam
     {
         [SerializeField] private GameObject _puzzleGameObject;
         [SerializeField] private ConversationObject _characterReaction; //player reaction to ritual
+        [SerializeField] private GameObject _exclamationGameObject;
 
         private PlayerInput _playerInput;
         private int _gameProgress = 3;
@@ -50,6 +51,7 @@ namespace ACoolTeam
                 //Debug.Log(ConversationManager.Instance.IsTalking());
                 yield return null;
             }
+            _exclamationGameObject.SetActive(false);
             PuzzleManager.Instance.StartPuzzle(_puzzleGameObject, false);
         }
 
